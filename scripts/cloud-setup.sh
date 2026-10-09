@@ -29,5 +29,6 @@ fi
 [[ "$(.tools/bin/rtk --version)" == 'rtk 0.50.0' ]]
 export IMPECCABLE_HOME="${IMPECCABLE_HOME:-$PWD/.tools/impeccable}"
 .agents/skills/impeccable/scripts/impeccable engine-probe
+export npm_config_cache="${npm_config_cache:-$PWD/.tools/npm-cache}"
 npm ci --no-audit --no-fund
 python3 scripts/check-setup.py

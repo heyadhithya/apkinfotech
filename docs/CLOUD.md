@@ -33,7 +33,8 @@ The agent uses RTK explicitly; this does not claim Cloud hook support.
 Use Node 24. Persist `IMPECCABLE_HOME` as the absolute checkout path followed by
 `/.tools/impeccable` (currently `/workspace/apkinfotech/.tools/impeccable`) in Cloud
 environment variables. This runtime's home directory is not writable. Setup and
-the check command also default to the ignored project cache. Verify from a fresh
+the check command also default to the ignored project cache; npm installation
+uses `.tools/npm-cache` unless a cache is explicitly configured. Verify from a fresh
 shell and a new task after publishing.
 
 For the legacy Code Review/integrations environment, set the setup script to
