@@ -10,6 +10,16 @@
 
 ## Daily workflow
 
+Project links:
+- [Source and checks](https://github.com/heyadhithya/apkinfotech)
+- [Linear backlog](https://linear.app/adhithyadotcom/project/apk-infotech-cfbe9c113573/issues)
+- [Vercel project](https://vercel.com/adithya-ss-projects-3d3e5750/apkinfotech)
+- [Development starter deployment](https://apkinfotech.vercel.app)
+
+The current Vercel workspace is Hobby. Vercel restricts Hobby to personal,
+noncommercial use; arrange an appropriate plan before the paid client launch.
+Deployment protection remains enabled. No billing change was made.
+
 1. Pick a scoped issue in the APK Infotech Linear project. Start with the brief:
    supply the existing client website, approved assets, course details, and the
    intended visitor action. Use `grill-me` to resolve decisions before building.

@@ -15,10 +15,10 @@ changes; Linear tracks work. Cloud configuration prepares tools and starts Next.
 
 ## Tasks
 
-- [ ] Add the minimal starter, lockfile, smoke check, and relevant Matt Pocock
+- [x] Add the minimal starter, lockfile, smoke check, and relevant Matt Pocock
   skills. Update Cloud setup, CI, agent commands, and product context. Verify
   setup, lint, type checking, build, and the running production server.
-- [ ] Create the Linear project and initial scoped backlog. Connect the GitHub
+- [x] Create the Linear project and initial scoped backlog. Connect the GitHub
   repository to a Vercel project and observe a ready starter deployment.
 - [ ] Republish Cloud with the latest main, persistent tool cache, dependency
   installation, and app startup instructions. Run a fresh-task verification and

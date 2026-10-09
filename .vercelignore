@@ -1,0 +1,10 @@
+.agents/
+.tools/
+.impeccable/
+.omo/
+.github/
+docs/
+PRODUCT.md
+AGENTS.md
+GLOSSARY.md
+README.md
