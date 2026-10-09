@@ -1,39 +1,11 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import {
   courseCategories,
   filterCourses,
   registrationUrl,
 } from "./course-data";
-function CourseIcon({ kind }: { kind: string }) {
-  const paths: Record<string, string> = {
-    code: "m9 8-4 4 4 4m6-8 4 4-4 4m-2-11-2 14",
-    ai: "M8 5h8v4h4v6h-4v4H8v-4H4V9h4V5Zm0 7h8M12 5v14",
-    chip: "M7 7h10v10H7V7Zm3 3h4v4h-4v-4M9 3v4m6-4v4M9 17v4m6-4v4M3 9h4m-4 6h4m10-6h4m-4 6h4",
-    shield: "m12 3 8 4v5c0 5-8 9-8 9s-8-4-8-9V7l8-4Zm-4 9 3 3 5-6",
-    robot:
-      "M6 8h12v11H6V8Zm6-5v5M3 11h3m12 0h3M9 19v3m6-3v3M9 12h1m4 0h1M9 16h6",
-    career: "M4 8h16v12H4V8Zm4 0V4h8v4M4 12l8 3 8-3M12 13v4",
-    graduate: "m3 9 9-5 9 5-9 5-9-5Zm4 3v5c3 3 7 3 10 0v-5M21 9v7",
-  };
-  return (
-    <svg
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d={paths[kind]}
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 export default function CourseExplorer() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All courses");
@@ -109,21 +81,21 @@ export default function CourseExplorer() {
       <div id="course-results" className="course-grid">
         {visible.map((course) => (
           <article
-            className={`course-card course-${course.symbol}`}
+            className="course-card"
             key={course.id}
           >
-            <div className="course-art">
-              <CourseIcon kind={course.symbol} />
-              <span>{course.category}</span>
-            </div>
+            <figure className={`course-photo course-photo-${course.image}`}>
+              <div className="course-image-frame">
+                <Image src={`/images/${course.image}.webp`} alt={course.imageAlt}
+                  width={1400} height={1050}
+                  sizes="(max-width: 680px) 100vw, 50vw" />
+              </div>
+              <figcaption>From our activity archive</figcaption>
+            </figure>
             <div className="course-body">
+              <span className="course-category">{course.category}</span>
               <h3>{course.title}</h3>
               <p>{course.short}</p>
-              <div className="topic-tags">
-                {course.topics.slice(0, 3).map((topic) => (
-                  <span key={topic}>{topic}</span>
-                ))}
-              </div>
               <details>
                 <summary>
                   Programme overview{" "}
@@ -213,8 +185,8 @@ export default function CourseExplorer() {
         </div>
       )}
       <p className="course-footnote">
-        Programmes listed on APK Infotech&apos;s official website. Contact the
-        team for current batches, duration, fees, and entry requirements.
+        Photos show past APK Infotech activities, not individual course sessions.
+        Contact the team for current batches, fees, duration, and entry requirements.
       </p>
     </>
   );

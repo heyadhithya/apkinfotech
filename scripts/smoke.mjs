@@ -15,7 +15,7 @@ for (let attempt = 0; attempt < 30; attempt += 1) {
 assert.equal(response.status, 200);
 const html = await response.text();
 assert.match(html, /<main id="main">/);
-assert.match(html, /Learn the skills/);
+assert.match(html, /Technical courses/);
 assert.match(html, /From our activity archive/);
 assert.match(html, /Full Stack Web Development/);
 assert.match(html, /Agentic AI with Gen AI/);

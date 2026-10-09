@@ -7,7 +7,7 @@ const activities = [
     category: "Workshops",
     image: "docker-workshop",
     tags: "DevOps · Docker",
-    summary: "Getting hands-on with technical ideas, together.",
+    summary: "A two-day DevOps and Docker workshop.",
     detail: "A two-day workshop captured in our activity archive.",
     alt: "Learners discussing DevOps and Docker in a classroom workshop",
   },
@@ -16,7 +16,7 @@ const activities = [
     category: "Internships",
     image: "summer-internship",
     tags: "Internship · Classroom learning",
-    summary: "Time to explore, ask questions, and get involved.",
+    summary: "Classroom sessions from the summer 2026 internship.",
     detail:
       "Classroom moments from the supplied summer internship 2026 photo collection.",
     alt: "An instructor leading a summer internship session",
@@ -26,17 +26,17 @@ const activities = [
     category: "Projects",
     image: "project-review",
     tags: "Project review · Presentations",
-    summary: "A space to share the work behind the learning.",
+    summary: "Project presentations, reviews, and certification.",
     detail:
       "Highlights from our project review, internship, and certification event collection.",
     alt: "Participants gathered for a project review event",
   },
   {
-    title: "Connecting with colleges",
+    title: "College engagement",
     category: "College engagement",
     image: "college-engagement",
     tags: "College engagement · MOU event",
-    summary: "Bringing learning communities into the same room.",
+    summary: "Krishnaswamy Engineering College and Technology MOU event.",
     detail:
       "Photos from the Krishnaswamy Engineering College and Technology MOU event in the supplied archive.",
     alt: "A group photograph at a college MOU event",

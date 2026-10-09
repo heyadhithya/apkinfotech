@@ -38,14 +38,8 @@ export default function Navigation() {
           <a href="#courses" onClick={() => setOpen(false)}>
             Courses
           </a>
-          <a href="#story" onClick={() => setOpen(false)}>
-            Our story
-          </a>
-          <a href="#gallery" onClick={() => setOpen(false)}>
-            Gallery
-          </a>
-          <a href="#location" onClick={() => setOpen(false)}>
-            Location
+          <a href="#activities" onClick={() => setOpen(false)}>
+            Activities
           </a>
           <a href="#contact" onClick={() => setOpen(false)}>
             Contact

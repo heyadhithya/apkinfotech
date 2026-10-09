@@ -28,5 +28,47 @@
     "source": "user-uploaded masterdata.zip",
     "archive_path": "summer internship 2026/WhatsApp Image 2026-10-09 at 9.44.50 AM.jpeg",
     "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content"
+  },
+  "workshop-presentation.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "Devops -dacker two days workshop/WhatsApp Image 2026-10-09 at 9.19.39 AM.jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content",
+    "use": "Documentary archive image; does not represent an individual current course"
+  },
+  "classroom-discussion.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "summer internship 2026/WhatsApp Image 2026-10-09 at 9.44.49 AM.jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content",
+    "use": "Documentary archive image; does not represent an individual current course"
+  },
+  "technical-session.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "summer internship 2026/WhatsApp Image 2026-10-09 at 9.44.52 AM (1).jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content",
+    "use": "Documentary archive image; does not represent an individual current course"
+  },
+  "workshop-group.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "Devops -dacker two days workshop/WhatsApp Image 2026-10-09 at 9.19.46 AM.jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content",
+    "use": "Documentary archive image; does not represent an individual current course"
+  },
+  "classroom-teaching.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "summer internship 2026/WhatsApp Image 2026-10-09 at 9.44.55 AM (2).jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content",
+    "use": "Documentary archive image; does not represent an individual current course"
+  },
+  "workshop-conversation.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "Devops -dacker two days workshop/WhatsApp Image 2026-10-09 at 9.19.40 AM.jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content",
+    "use": "Documentary archive image; does not represent an individual current course"
+  },
+  "internship-classroom.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "summer internship 2026/WhatsApp Image 2026-10-09 at 9.44.55 AM (3).jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content",
+    "use": "Documentary archive image; does not represent an individual current course"
   }
 }
