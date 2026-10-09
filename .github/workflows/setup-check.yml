@@ -7,9 +7,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
       - name: Prepare pinned agent tools
         run: bash scripts/cloud-setup.sh
       - name: Check repeated setup
         run: bash scripts/cloud-setup.sh
       - name: Check shell script
         run: shellcheck scripts/cloud-setup.sh
+      - name: Check application
+        run: npm run check
+      - name: Smoke test production server
+        run: |
+          npm run start > "$RUNNER_TEMP/next.log" 2>&1 &
+          app_pid=$!
+          trap 'kill "$app_pid"' EXIT
+          npm run smoke

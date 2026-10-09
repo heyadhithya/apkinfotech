@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
-for tool in curl tar sha256sum python3; do
+for tool in curl tar sha256sum python3 node npm; do
   command -v "$tool" >/dev/null || { printf 'Missing required tool: %s\n' "$tool" >&2; exit 1; }
 done
 
@@ -27,5 +27,7 @@ if [[ ! -x .tools/bin/rtk ]] || [[ "$(.tools/bin/rtk --version)" != 'rtk 0.50.0'
 fi
 
 [[ "$(.tools/bin/rtk --version)" == 'rtk 0.50.0' ]]
+export IMPECCABLE_HOME="${IMPECCABLE_HOME:-$PWD/.tools/impeccable}"
 .agents/skills/impeccable/scripts/impeccable engine-probe
+npm ci --no-audit --no-fund
 python3 scripts/check-setup.py

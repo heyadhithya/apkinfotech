@@ -1,8 +1,8 @@
 # APK Infotech
 
 Read `PRODUCT.md` before product work and `docs/CLOUD.md` for environment setup.
-This repository currently contains agent tooling and product context; there is
-no application scaffold or selected framework yet.
+The application is a minimal Next.js App Router starter with TypeScript and npm.
+Use Node 24. The client website still needs its approved brief and content.
 
 ## Working rules
 
@@ -36,7 +36,20 @@ no application scaffold or selected framework yet.
   unusable, recover the raw output with `.tools/bin/rtk proxy <command>`.
 - RTK is called explicitly in Cloud; automatic local command-rewrite hooks are
   not assumed. Do not install global hooks or change trust settings as a side effect.
-- There are no app build/test/dev commands yet. When a stack is chosen, add its
-  lockfile, update setup and CI for it, and document the actual commands here.
+- Install: `npm ci`. Development: `npm run dev -- --hostname 0.0.0.0`.
+- Check: `npm run check` (lint, type checking, production build).
+- Production smoke: start with `npm run start`, then `npm run smoke`.
+- A lockfile is committed. Keep `npm ci`, Cloud setup, and CI aligned with it.
 - Before claiming completion, run the relevant checks and report their results.
   Finish with what was skipped or unverified and any material remaining risk.
+
+## Agent skills
+
+Use Matt Pocock's `to-spec`, `to-tickets`, `code-review`, `handoff`, and
+`grill-with-docs` when the task calls for them. Superpowers supplies the planning,
+debugging, testing, review, and verification workflows. Impeccable supplies UI
+design and audit guidance. Do not run every installed skill on every task.
+
+Linear is the issue tracker; read `docs/agents/issue-tracker.md` before tracker
+work. Domain documentation uses `GLOSSARY.md` and `docs/adr/`; see
+`docs/agents/domain.md`. Follow `docs/WORKFLOW.md` for Cloud, PRs, and deployments.

@@ -7,8 +7,9 @@ web
 
 ## Stack
 
-Undecided. This task sets up Codex Cloud, not the application. Ask the user for
-their preferred stack and deployment target before scaffolding.
+Confirmed on 2026-10-09: a minimal Next.js App Router starter with TypeScript and
+npm, deployed on the user's Vercel account. Use Node 24. The user will develop
+the actual website in Codex Cloud; the starter is an infrastructure checkpoint.
 
 ## Users
 

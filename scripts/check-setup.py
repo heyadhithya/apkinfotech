@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from pathlib import Path
+import os
 import re
 import subprocess
 
@@ -9,6 +10,8 @@ required = {
     "impeccable", "ponytail", "grill-me", "grilling", "using-superpowers",
     "brainstorming", "writing-plans", "systematic-debugging",
     "test-driven-development", "verification-before-completion",
+    "to-spec", "to-tickets", "code-review", "handoff", "grill-with-docs",
+    "domain-modeling", "setup-matt-pocock-skills",
 }
 found = set()
 for manifest in sorted(skills.glob("*/SKILL.md")):
@@ -29,7 +32,8 @@ subprocess.run(["bash", "-n", str(root / "scripts/cloud-setup.sh")], check=True)
 version = subprocess.check_output([str(root / ".tools/bin/rtk"), "--version"], text=True).strip()
 assert version == "rtk 0.50.0", version
 probe = subprocess.check_output(
-    [str(skills / "impeccable/scripts/impeccable"), "engine-probe"], text=True
+    [str(skills / "impeccable/scripts/impeccable"), "engine-probe"], text=True,
+    env={**os.environ, "IMPECCABLE_HOME": os.environ.get("IMPECCABLE_HOME", str(root / ".tools/impeccable"))},
 ).strip()
 assert probe == "impeccable-engine 0.1.12", probe
 print(f"Setup OK: {len(found)} skills, RTK 0.50.0, Impeccable engine 0.1.12, portable project docs.")

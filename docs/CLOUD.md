@@ -14,8 +14,8 @@ task. Local plugin installations are not copied to a cloud machine.
    bash scripts/cloud-setup.sh
    ```
 
-4. Use the repository's `project-start` skill as the start instructions. There
-   is no application server yet; setup must not scaffold one.
+4. Use the repository's `project-start` skill as the start instructions. It checks
+   tooling and starts the existing Next.js server for UI tasks.
 5. Run `python3 scripts/check-setup.py`, review the configuration and setup
    results, then publish the environment. In a new task, select that environment.
 
@@ -26,9 +26,15 @@ GitHub release access during installation; the installed skills work offline.
 Impeccable live/browser features may require additional network access later.
 
 The script supports Linux x86_64 and arm64, installs a pinned checksum-verified
-RTK binary under `.tools/bin`, and warms Impeccable's engine cache. It can be run
-again on a prepared environment. Tool binaries and caches are ignored by Git.
+RTK binary under `.tools/bin`, warms Impeccable's engine cache, and runs `npm ci`.
+It can be run again on a prepared environment. Tool binaries and caches are ignored by Git.
 The agent uses RTK explicitly; this does not claim Cloud hook support.
+
+Use Node 24. Persist `IMPECCABLE_HOME` as the absolute checkout path followed by
+`/.tools/impeccable` (currently `/workspace/apkinfotech/.tools/impeccable`) in Cloud
+environment variables. This runtime's home directory is not writable. Setup and
+the check command also default to the ignored project cache. Verify from a fresh
+shell and a new task after publishing.
 
 For the legacy Code Review/integrations environment, set the setup script to
 `bash scripts/cloud-setup.sh` and the maintenance script to that same command.
@@ -41,7 +47,8 @@ automatically creating a cloud environment.
 Read AGENTS.md and PRODUCT.md. Use Ponytail full and Superpowers.
 Use $grill-me to resolve the APK Infotech website brief before implementation.
 Ask for the existing client website, approved content, stack/deployment choice,
-and the first visitor action. Use Impeccable for the agreed UI work.
+and the first visitor action. The stack is already Next.js and Vercel.
+Use Impeccable for the agreed UI work.
 ```
 
 Use `$impeccable shape landing page` to work through UI requirements,

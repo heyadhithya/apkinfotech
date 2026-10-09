@@ -6,6 +6,9 @@
 .env.*
 !.env.example
 node_modules/
+.next/
+.vercel/
+*.tsbuildinfo
 dist/
 coverage/
 __pycache__/
