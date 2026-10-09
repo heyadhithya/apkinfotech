@@ -1,0 +1,12 @@
+.tools/
+.agents/skills/impeccable/scripts/bin/
+.impeccable/config.local.json
+.impeccable/live/
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+coverage/
+__pycache__/
+.DS_Store

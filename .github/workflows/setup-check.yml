@@ -1,0 +1,15 @@
+name: Agent setup
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare pinned agent tools
+        run: bash scripts/cloud-setup.sh
+      - name: Check repeated setup
+        run: bash scripts/cloud-setup.sh
+      - name: Check shell script
+        run: shellcheck scripts/cloud-setup.sh
