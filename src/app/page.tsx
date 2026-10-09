@@ -4,6 +4,7 @@ import Navigation from "./navigation";
 import Brand from "./brand";
 import CourseExplorer from "./course-explorer";
 import { registrationUrl } from "./course-data";
+import ProgrammeEnquiry from "./programme-enquiry";
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return (
@@ -20,35 +21,25 @@ export default function Home() {
       <a className="skip-link" href="#main">Skip to content</a>
       <Navigation />
       <main id="main">
-        <section className="hero wrap">
-          <div className="hero-copy">
-            <h1>Technical courses.<br /><span>Career preparation.</span></h1>
-            <p>Explore seven programmes across software, AI, electronics, security, and career readiness.</p>
-            <div className="hero-actions">
-              <a className="button primary" href="#courses">Browse courses <Arrow /></a>
-              <a className="text-link" href="#contact">Ask about a programme <Arrow diagonal /></a>
-            </div>
-            <p className="hero-location">APK Infotech · Mannivakkam, Chennai</p>
-          </div>
-          <figure className="hero-visual">
-            <div className="hero-photo">
-              <Image src="/images/learners.webp"
-                alt="Participants gathered for a past APK Infotech project review and internship event"
-                width={1280} height={960} priority sizes="(max-width: 760px) 100vw, 45vw" />
-            </div>
-            <figcaption>Project reviews and internships <span>From the APK Infotech archive</span></figcaption>
-          </figure>
-        </section>
-        <section id="courses" className="wrap section courses-section">
-          <div className="section-heading">
-            <div>
-              <h2>Find your programme</h2>
-              <p>Choose a subject, read the overview, and register your interest.</p>
-            </div>
-            <a className="text-link" href="#contact">Need help choosing? <Arrow /></a>
-          </div>
-          <CourseExplorer />
-        </section>
+        <CourseExplorer
+          hero={
+            <>
+              <h1>Build your<br />technical expertise.</h1>
+              <p>Explore seven programmes in software, AI, electronics, security, and career preparation.</p>
+            </>
+          }
+          photograph={
+            <figure className="hero-visual">
+              <div className="hero-photo">
+                <Image src="/images/learners.webp"
+                  alt="Participants gathered for a past APK Infotech project review and internship event"
+                  width={1280} height={960} priority sizes="(max-width: 760px) 100vw, 42vw" />
+              </div>
+              <figcaption>Project reviews and internships <span>Past APK Infotech activity</span></figcaption>
+            </figure>
+          }
+        />
+        <ProgrammeEnquiry />
         <section id="activities" className="archive-section">
           <div id="gallery" className="wrap section">
             <div className="section-heading">

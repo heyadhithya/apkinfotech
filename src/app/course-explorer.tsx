@@ -1,15 +1,18 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import {
+  courses,
   courseCategories,
   filterCourses,
   registrationUrl,
 } from "./course-data";
-export default function CourseExplorer() {
+export default function CourseExplorer({ hero, photograph }: { hero: ReactNode; photograph: ReactNode }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All courses");
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
+  const [programme, setProgramme] = useState("");
+  const heading = useRef<HTMLHeadingElement>(null);
   const results = filterCourses(query, category);
   const visible =
     expanded || category !== "All courses" || query.trim()
@@ -17,6 +20,38 @@ export default function CourseExplorer() {
       : results.slice(0, 4);
   return (
     <>
+      <section className="masthead">
+        <div className="wrap hero">
+          <div className="hero-copy">
+            {hero}
+            <form className="programme-finder" id="programme-finder" onSubmit={(event) => {
+              event.preventDefault();
+              setQuery(courses.find((course) => course.id === programme)?.title ?? "");
+              setCategory("All courses");
+              setExpanded(true);
+              heading.current?.focus({ preventScroll: true });
+              heading.current?.scrollIntoView({ block: "start" });
+            }}>
+              <label htmlFor="hero-programme">Choose a programme</label>
+              <div className="finder-controls">
+                <select id="hero-programme" value={programme} onChange={(event) => setProgramme(event.target.value)}>
+                  <option value="">All programmes</option>
+                  {courses.map((course) => <option key={course.id} value={course.id}>{course.title}</option>)}
+                </select>
+                <button className="button gold" type="submit">View programme <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.7" /></svg></button>
+              </div>
+            </form>
+            <a className="masthead-enquiry" href="#enquiry">Ask about fees and batches <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" strokeWidth="1.7" /></svg></a>
+          </div>
+          {photograph}
+        </div>
+        <div className="wrap masthead-foot"><span>Software development</span><span>AI</span><span>Electronics</span><span>Security</span><span>Career readiness</span></div>
+      </section>
+      <section id="courses" className="wrap section courses-section">
+        <div className="section-heading">
+          <div><h2 ref={heading} tabIndex={-1}>Programmes</h2><p>Explore the subjects. Read the overview. Register your interest.</p></div>
+          <a className="text-link" href="#enquiry">Need help choosing? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.7" /></svg></a>
+        </div>
       <div className="course-controls">
         <div
           className="tabs"
@@ -71,7 +106,7 @@ export default function CourseExplorer() {
             onClick={() => {
               setQuery("");
               setCategory("All courses");
-              setExpanded(false);
+              setExpanded(true);
             }}
           >
             Clear course filters
@@ -88,7 +123,7 @@ export default function CourseExplorer() {
               <div className="course-image-frame">
                 <Image src={`/images/${course.image}.webp`} alt={course.imageAlt}
                   width={1400} height={1050}
-                  sizes="(max-width: 680px) 100vw, 50vw" />
+                  sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" />
               </div>
               <figcaption>From our activity archive</figcaption>
             </figure>
@@ -188,6 +223,7 @@ export default function CourseExplorer() {
         Photos show past APK Infotech activities, not individual course sessions.
         Contact the team for current batches, fees, duration, and entry requirements.
       </p>
+      </section>
     </>
   );
 }

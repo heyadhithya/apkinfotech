@@ -19,9 +19,10 @@ backgrounds, location, language, and learning needs remain unconfirmed.
 
 ## Product Purpose
 
-A landing page and course-focused website, with placement support and job
-readiness content. The user cited Coursera as a reference for courses; a full
-learning management system was not requested or approved.
+A professional training and career-preparation website. Visitors browse confirmed
+programmes, view past activities, and enquire or register interest. The current
+visual direction is an enterprise training catalogue, inspired by the user’s
+AWS Training and IBM references. A full learning management system is outside scope.
 
 ## Positioning
 
@@ -36,14 +37,18 @@ The client website reference is https://apkinfotech.in/. Access is now available
 ## Capabilities and Constraints
 
 Confirmed scope areas: landing page, courses, placement, and readiness.
-Course delivery, payments, accounts, assessments, dashboards, forms, and their
-data handling are undecided. Do not add them simply because Coursera has them.
+The course enquiry selector opens a WhatsApp draft on the visitor’s explicit
+action; the visitor reviews and sends it there. Registration uses the verified
+official Google Form. This site does not collect or store learner details.
+Course delivery, payments, accounts, assessments, dashboards, and their data
+handling remain undecided.
 
 ## Brand Commitments
 
 Project name: APK Infotech. The official navy-and-gold logo and company name were retrieved from
 https://apkinfotech.in/ on 2026-10-09. Use the genuine logo rather than a
-generated mark. Preserve clear Coursera-inspired programme discovery.
+generated mark. Use an enterprise navy-and-gold layout with clear programme
+discovery, real documentary photography, and restrained accessible motion.
 
 ## Evidence on Hand
 

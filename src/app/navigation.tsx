@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Brand from "./brand";
-import { registrationUrl } from "./course-data";
 export default function Navigation() {
   const [open, setOpen] = useState(false);
   return (
@@ -36,22 +35,20 @@ export default function Navigation() {
           aria-label="Main navigation"
         >
           <a href="#courses" onClick={() => setOpen(false)}>
-            Courses
+            Programmes
           </a>
           <a href="#activities" onClick={() => setOpen(false)}>
-            Activities
+            Learning activities
           </a>
-          <a href="#contact" onClick={() => setOpen(false)}>
-            Contact
+          <a href="#location" onClick={() => setOpen(false)}>
+            Visit us
           </a>
           <a
             className="button nav-button"
-            href={registrationUrl}
-            target="_blank"
-            rel="noreferrer"
+            href="#enquiry"
             onClick={() => setOpen(false)}
           >
-            Register interest{" "}
+            Enquire{" "}
             <svg
               width="17"
               height="17"
@@ -60,7 +57,7 @@ export default function Navigation() {
               aria-hidden="true"
             >
               <path
-                d="M6 18 18 6M6 6h12v12"
+                d="M4 12h16m-6-6 6 6-6 6"
                 stroke="currentColor"
                 strokeWidth="1.7"
               />

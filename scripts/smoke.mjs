@@ -15,11 +15,13 @@ for (let attempt = 0; attempt < 30; attempt += 1) {
 assert.equal(response.status, 200);
 const html = await response.text();
 assert.match(html, /<main id="main">/);
-assert.match(html, /Technical courses/);
+assert.match(html, /Build your/);
 assert.match(html, /From our activity archive/);
 assert.match(html, /Full Stack Web Development/);
 assert.match(html, /Agentic AI with Gen AI/);
 assert.match(html, /apk-official-logo/);
+assert.match(html, /Choose a programme/);
+assert.match(html, /Continue on WhatsApp/);
 assert.match(html, /No. 65/);
 assert.match(html, /official@apkinfotech.in/);
 assert.match(html, /Mannivakkam, Chennai/);

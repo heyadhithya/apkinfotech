@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-09T10:56:01.567403+00:00",
+  "generatedAt": "2026-10-09T11:16:35.926444+00:00",
   "title": "Design System: APK Infotech",
   "extensions": {
     "colorMeta": {
@@ -64,14 +64,6 @@
         "role": "neutral",
         "displayName": "Archive Bg"
       },
-      "archive-line": {
-        "role": "neutral",
-        "displayName": "Archive Line"
-      },
-      "archive-details-line": {
-        "role": "neutral",
-        "displayName": "Archive Details Line"
-      },
       "contact-muted": {
         "role": "neutral",
         "displayName": "Contact Muted"
@@ -83,6 +75,22 @@
       "contact-line": {
         "role": "neutral",
         "displayName": "Contact Line"
+      },
+      "finder-gold": {
+        "role": "secondary",
+        "displayName": "Finder Gold"
+      },
+      "finder-gold-hover": {
+        "role": "secondary",
+        "displayName": "Finder Gold Hover"
+      },
+      "enquiry-bg": {
+        "role": "neutral",
+        "displayName": "Enquiry Bg"
+      },
+      "enquiry-line": {
+        "role": "neutral",
+        "displayName": "Enquiry Line"
       }
     },
     "typographyMeta": {
@@ -231,7 +239,7 @@
       "refersTo": "button-primary",
       "description": "Observed action styling and keyboard/hover feedback.",
       "html": "<button class=\"ds-primary\">Browse courses<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h16m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></button>",
-      "css": ".ds-primary{font-family:var(--font,Manrope,Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;transition:color 160ms,background-color 160ms,border-color 160ms;background:var(--blue,#173f75);color:white}.ds-primary:hover{background:var(--navy,#081d37)}.ds-primary:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}.ds-primary svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-primary:hover svg,.ds-primary:focus-visible svg{transform:translateX(3px)}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-primary svg{transition:none}.ds-primary:hover svg,.ds-primary:focus-visible svg{transform:none}}"
+      "css": ".ds-primary{font-family:var(--font,Manrope,Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:2px;font-size:14px;font-weight:600;cursor:pointer;transition:color 160ms,background-color 160ms,border-color 160ms;background:var(--blue,#173f75);color:white}.ds-primary:hover{background:var(--navy,#081d37)}.ds-primary:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}.ds-primary svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-primary:hover svg,.ds-primary:focus-visible svg{transform:translateX(3px)}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-primary svg{transition:none}.ds-primary:hover svg,.ds-primary:focus-visible svg{transform:none}}"
     },
     {
       "name": "Outline Button",
@@ -239,7 +247,7 @@
       "refersTo": "button-outline",
       "description": "Observed action styling and keyboard/hover feedback.",
       "html": "<button class=\"ds-outline\">Explore all 7 programmes<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h16m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></button>",
-      "css": ".ds-outline{font-family:var(--font,Manrope,Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;transition:color 160ms,background-color 160ms,border-color 160ms;background:transparent;color:var(--blue,#173f75);border-color:var(--blue,#173f75)}.ds-outline:hover{background:#edf1f5}.ds-outline:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}.ds-outline svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-outline:hover svg,.ds-outline:focus-visible svg{transform:translateX(3px)}@media(prefers-reduced-motion:reduce){.ds-outline,.ds-outline svg{transition:none}.ds-outline:hover svg,.ds-outline:focus-visible svg{transform:none}}"
+      "css": ".ds-outline{font-family:var(--font,Manrope,Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:2px;font-size:14px;font-weight:600;cursor:pointer;transition:color 160ms,background-color 160ms,border-color 160ms;background:transparent;color:var(--blue,#173f75);border-color:var(--blue,#173f75)}.ds-outline:hover{background:#edf1f5}.ds-outline:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}.ds-outline svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-outline:hover svg,.ds-outline:focus-visible svg{transform:translateX(3px)}@media(prefers-reduced-motion:reduce){.ds-outline,.ds-outline svg{transition:none}.ds-outline:hover svg,.ds-outline:focus-visible svg{transform:none}}"
     },
     {
       "name": "White Button",
@@ -247,7 +255,7 @@
       "refersTo": "button-white",
       "description": "Observed action styling and keyboard/hover feedback.",
       "html": "<button class=\"ds-white\">Chat with our team<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h16m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></button>",
-      "css": ".ds-white{font-family:var(--font,Manrope,Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;transition:color 160ms,background-color 160ms,border-color 160ms;background:white;color:var(--navy,#081d37)}.ds-white:hover{background:#eee7d9}.ds-white:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}.ds-white svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-white:hover svg,.ds-white:focus-visible svg{transform:translateX(3px)}@media(prefers-reduced-motion:reduce){.ds-white,.ds-white svg{transition:none}.ds-white:hover svg,.ds-white:focus-visible svg{transform:none}}"
+      "css": ".ds-white{font-family:var(--font,Manrope,Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:2px;font-size:14px;font-weight:600;cursor:pointer;transition:color 160ms,background-color 160ms,border-color 160ms;background:white;color:var(--navy,#081d37)}.ds-white:hover{background:#eee7d9}.ds-white:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}.ds-white svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-white:hover svg,.ds-white:focus-visible svg{transform:translateX(3px)}@media(prefers-reduced-motion:reduce){.ds-white,.ds-white svg{transition:none}.ds-white:hover svg,.ds-white:focus-visible svg{transform:none}}"
     },
     {
       "name": "Category Filter",
@@ -271,7 +279,7 @@
       "refersTo": "archive-badge",
       "description": "Paper badge on archive photographs.",
       "html": "<span class=\"ds-badge\">Past activity</span>",
-      "css": ".ds-badge{font-family:var(--font,Manrope,Arial,sans-serif);display:inline-block;padding:2px 8px;background:var(--paper,#fbfaf7);color:var(--navy,#081d37);font-size:12px;border-radius:2px}"
+      "css": ".ds-badge{font-family:var(--font,Manrope,Arial,sans-serif);display:inline-block;padding:2px 8px;background:var(--paper,#fff);color:var(--navy,#081d37);font-size:12px;border-radius:2px}"
     },
     {
       "name": "Programme Card Body",
@@ -279,24 +287,40 @@
       "refersTo": "course-card",
       "description": "Actual programme body and native disclosure; archive photograph and registration row are documented in DESIGN.md.",
       "html": "<article class=\"ds-course\"><span>Development</span><h3>Full Stack Web Development</h3><p>Build for the web, from interface to database.</p><details><summary>Programme overview <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></summary><p>Learn the MERN stack with React, Node.js, MongoDB, and Express through real-world projects.</p></details></article>",
-      "css": ".ds-course{font-family:var(--font,Manrope,Arial,sans-serif);max-width:480px;background:white;color:var(--navy,#081d37);border:1px solid var(--line,#dce1e5);border-radius:12px;padding:18px 26px 23px}.ds-course>span{display:block;color:var(--gold,#956811);font-size:13px;font-weight:600;margin-bottom:6px}.ds-course h3{margin:0;font-size:24px;font-weight:700;letter-spacing:-.025em;line-height:1.3}.ds-course>p{color:var(--muted,#536078);font-size:15px;margin:12px 0 0;line-height:1.65}.ds-course details{border-top:1px solid var(--line,#dce1e5);margin-top:20px}.ds-course summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:14px;cursor:pointer;list-style:none;font-size:14px;font-weight:600;transition:color 160ms,background-color 160ms,border-color 160ms}.ds-course summary::-webkit-details-marker{display:none}.ds-course summary svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-course details[open] summary svg{transform:rotate(180deg)}.ds-course details>p{font-size:14px;color:var(--muted,#536078);padding:0 0 16px;line-height:1.65}.ds-course summary:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-course summary,.ds-course summary svg{transition:none}}"
+      "css": ".ds-course{font-family:var(--font,Manrope,Arial,sans-serif);max-width:480px;background:white;color:var(--navy,#081d37);border:1px solid var(--line,#dce1e5);border-radius:4px;padding:16px 20px 20px}.ds-course>span{display:block;color:var(--gold,#956811);font-size:13px;font-weight:600;margin-bottom:6px}.ds-course h3{margin:0;font-size:21px;font-weight:700;letter-spacing:-.025em;line-height:1.3}.ds-course>p{color:var(--muted,#536078);font-size:14px;margin:12px 0 0;line-height:1.65}.ds-course details{border-top:1px solid var(--line,#dce1e5);margin-top:20px}.ds-course summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:14px;cursor:pointer;list-style:none;font-size:14px;font-weight:600;transition:color 160ms,background-color 160ms,border-color 160ms}.ds-course summary::-webkit-details-marker{display:none}.ds-course summary svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-course details[open] summary svg{transform:rotate(180deg)}.ds-course details>p{font-size:14px;color:var(--muted,#536078);padding:0 0 16px;line-height:1.65}.ds-course summary:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-course summary,.ds-course summary svg{transition:none}}"
     },
     {
       "name": "Navigation",
       "kind": "nav",
       "refersTo": "navigation",
       "description": "Desktop section links; mobile toggle behavior remains in the application.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#courses\">Courses</a><a href=\"#activities\">Activities</a><a href=\"#contact\">Contact</a></nav>",
-      "css": ".ds-nav{font-family:var(--font,Manrope,Arial,sans-serif);display:flex;align-items:center;gap:30px;font-size:14px;font-weight:600;background:var(--paper,#fbfaf7);color:var(--navy,#081d37)}.ds-nav a{color:inherit;text-decoration:none;text-underline-offset:5px;transition:color 160ms,background-color 160ms,border-color 160ms}.ds-nav a:hover{color:var(--blue,#173f75);text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-nav a{transition:none}}"
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#courses\">Programmes</a><a href=\"#activities\">Learning activities</a><a href=\"#location\">Visit us</a><a href=\"#enquiry\">Enquire</a></nav>",
+      "css": ".ds-nav{font-family:var(--font,Manrope,Arial,sans-serif);display:flex;align-items:center;gap:28px;font-size:14px;font-weight:600;background:var(--paper,#fff);color:var(--navy,#081d37)}.ds-nav a{color:inherit;text-decoration:none;text-underline-offset:5px;transition:color 160ms,background-color 160ms,border-color 160ms}.ds-nav a:hover{color:var(--blue,#173f75);text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-nav a{transition:none}}"
+    },
+    {
+      "name": "Gold Finder Button",
+      "kind": "button",
+      "refersTo": "button-gold",
+      "description": "Masthead programme finder action.",
+      "html": "<button class=\"ds-gold\">View programme<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h16m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></button>",
+      "css": ".ds-gold{font-family:var(--font,Manrope,Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:2px;font-size:14px;font-weight:600;cursor:pointer;transition:color 160ms,background-color 160ms,border-color 160ms;background:#e4bc71;color:var(--navy,#081d37)}.ds-gold:hover{background:#f3d8a4}.ds-gold:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}.ds-gold svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-gold:hover svg,.ds-gold:focus-visible svg{transform:translateX(3px)}@media(prefers-reduced-motion:reduce){.ds-gold,.ds-gold svg{transition:none}.ds-gold:hover svg,.ds-gold:focus-visible svg{transform:none}}"
+    },
+    {
+      "name": "Native Programme Select",
+      "kind": "input",
+      "refersTo": "programme-select",
+      "description": "Labeled native select used in finder and enquiry; application controls submission.",
+      "html": "<label class=\"ds-select-label\" for=\"ds-programme\">Choose a programme</label><select class=\"ds-select\" id=\"ds-programme\"><option>All programmes</option><option>Full Stack Web Development</option><option>Agentic AI with Gen AI</option></select>",
+      "css": ".ds-select-label{font-family:var(--font,Manrope,Arial,sans-serif);display:block;font-size:14px;margin-bottom:10px;color:var(--navy,#081d37)}.ds-select{font-family:var(--font,Manrope,Arial,sans-serif);color:var(--navy,#081d37);background:white;border:1px solid #a3acb7;border-radius:2px;min-height:48px;width:100%;min-width:0;padding:10px 34px 10px 12px;font-size:14px}.ds-select:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}"
     }
   ],
   "narrative": {
-    "northStar": "Programme prospectus",
-    "overview": "The approved programme prospectus uses the intact official APK logo, warm white paper, navy text and actions, and restrained gold emphasis. Self-hosted Manrope and readable supporting copy let programme names, practical content, and documentary photography lead.\n\nUse archive photographs as evidence of past APK activities, with explicit captions. Programme names, registration, and contact information come from the official website recorded in `docs/official-site-sources.json`; photographs do not establish individual current course sessions. The current page keeps one programme directory, one archive, and compact FAQ/contact content.",
+    "northStar": "Enterprise training catalogue",
+    "overview": "The approved enterprise training catalogue keeps APK\u2019s intact official logo and navy-and-gold identity. A white header leads into a full-width navy masthead with a white heading, documentary photograph, native programme selector, and clear gold action. Self-hosted Manrope supports a readable, compact programme directory.\n\nThe user\u2019s AWS Training and IBM references set the corporate direction; blocked reference access means this is an original interpretation, with no verified live-site fidelity claimed. Programme names, registration, and contact information come from the official website recorded in `docs/official-site-sources.json`. Archive photographs describe past APK activities rather than individual current course sessions.",
     "keyCharacteristics": [
-      "Official navy/gold identity on warm white.",
+      "Official navy/gold identity with a white header and navy masthead.",
       "Readable Manrope with restrained heading weights.",
-      "Two-column photographic programme cards.",
+      "Three-column photographic programme catalogue and native programme discovery.",
       "Flat surfaces, native disclosures, and bounded motion."
     ],
     "rules": [
@@ -309,7 +333,7 @@
     "dos": [
       "Do preserve the full official logo without redrawing, recoloring, or cropping it.",
       "Do label archive photography as past activity and preserve meaningful alt text.",
-      "Do use navy actions, gold emphasis, warm white space, and the observed readable type roles.",
+      "Do use navy actions, gold discovery emphasis, white reading space, and the observed readable type roles.",
       "Do retain keyboard focus, native disclosure, filter announcements, and reduced-motion behavior."
     ],
     "donts": [

@@ -1,12 +1,16 @@
 ---
 name: APK Infotech
-description: A photographic programme prospectus in official navy and gold on warm white.
+description: An enterprise training catalogue with a navy masthead, gold discovery action, and documentary photography.
 colors:
+  finder-gold: "#e4bc71"
+  finder-gold-hover: "#f3d8a4"
+  enquiry-bg: "#edf2f8"
+  enquiry-line: "#d5dfeb"
   navy: "#081d37"
   blue: "#173f75"
   muted: "#536078"
   gold: "#956811"
-  paper: "#fbfaf7"
+  paper: "#fff"
   line: "#dce1e5"
   white: "white"
   selection: "#e8d6aa"
@@ -16,18 +20,16 @@ colors:
   image-placeholder: "#e9e8e1"
   search-border: "#a3acb7"
   empty-bg: "#eeeae1"
-  archive-bg: "#f0eee8"
-  archive-line: "#e1ddd4"
-  archive-details-line: "#d2cdc2"
+  archive-bg: "#f3f5f8"
   contact-muted: "#c9d4e1"
   contact-link: "#eed39a"
   contact-line: "#36506b"
 typography:
   display:
     fontFamily: "Manrope, Arial, sans-serif"
-    fontSize: "clamp(40px, 4.3vw, 62px)"
+    fontSize: "clamp(40px, 4.2vw, 60px)"
     fontWeight: 600
-    lineHeight: 1.1
+    lineHeight: 1.08
     letterSpacing: "-0.035em"
   headline:
     fontFamily: "Manrope, Arial, sans-serif"
@@ -37,7 +39,7 @@ typography:
     letterSpacing: "-0.025em"
   course-title:
     fontFamily: "Manrope, Arial, sans-serif"
-    fontSize: "24px"
+    fontSize: "21px"
     fontWeight: 700
     lineHeight: 1.3
     letterSpacing: "-0.025em"
@@ -56,7 +58,7 @@ typography:
     fontFamily: "Manrope, Arial, sans-serif"
     fontSize: "17px"
     fontWeight: 400
-    lineHeight: 1.75
+    lineHeight: 1.7
   wordmark:
     fontFamily: "Manrope, Arial, sans-serif"
     fontSize: "18px"
@@ -111,7 +113,7 @@ typography:
     fontFamily: "Manrope, Arial, sans-serif"
     fontSize: "38px"
     fontWeight: 600
-    lineHeight: 1.1
+    lineHeight: 1.08
     letterSpacing: "-0.035em"
   contact-headline:
     fontFamily: "Manrope, Arial, sans-serif"
@@ -123,46 +125,59 @@ typography:
     fontFamily: "Manrope, Arial, sans-serif"
     fontSize: "44px"
     fontWeight: 600
-    lineHeight: 1.1
+    lineHeight: 1.08
     letterSpacing: "-0.035em"
   display-compact:
     fontFamily: "Manrope, Arial, sans-serif"
     fontSize: "46px"
     fontWeight: 600
-    lineHeight: 1.1
+    lineHeight: 1.08
     letterSpacing: "-0.035em"
 rounded:
   badge: "2px"
   logo: "3px"
   control: "4px"
-  course-card: "12px"
+  course-card: "4px"
+  action: "2px"
 spacing:
   compact: "12px"
   control-gap: "14px"
   mobile-card-gap: "20px"
   layout-gap: "24px"
-  course-grid-gap: "28px"
+  course-grid-gap: "24px"
   section-mobile: "48px"
   section: "72px"
 components:
+  button-gold:
+    backgroundColor: "{colors.finder-gold}"
+    textColor: "{colors.navy}"
+    rounded: "{rounded.action}"
+    padding: "12px 20px"
+  button-gold-hover:
+    backgroundColor: "{colors.finder-gold-hover}"
+  programme-select:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.navy}"
+    rounded: "{rounded.action}"
+    padding: "10px 34px 10px 12px"
   button-primary:
     backgroundColor: "{colors.blue}"
     textColor: "{colors.white}"
-    rounded: "{rounded.control}"
+    rounded: "{rounded.action}"
     padding: "12px 20px"
   button-primary-hover:
     backgroundColor: "{colors.navy}"
   button-outline:
     backgroundColor: "transparent"
     textColor: "{colors.blue}"
-    rounded: "{rounded.control}"
+    rounded: "{rounded.action}"
     padding: "12px 20px"
   button-outline-hover:
     backgroundColor: "{colors.outline-hover}"
   button-white:
     backgroundColor: "{colors.white}"
     textColor: "{colors.navy}"
-    rounded: "{rounded.control}"
+    rounded: "{rounded.action}"
     padding: "12px 20px"
   button-white-hover:
     backgroundColor: "{colors.white-hover}"
@@ -196,27 +211,27 @@ components:
 
 ## Overview
 
-**Creative North Star: "Programme prospectus"**
+**Creative North Star: "Enterprise training catalogue"**
 
-The approved programme prospectus uses the intact official APK logo, warm white paper, navy text and actions, and restrained gold emphasis. Self-hosted Manrope and readable supporting copy let programme names, practical content, and documentary photography lead.
+The approved enterprise training catalogue keeps APK’s intact official logo and navy-and-gold identity. A white header leads into a full-width navy masthead with a white heading, documentary photograph, native programme selector, and clear gold action. Self-hosted Manrope supports a readable, compact programme directory.
 
-Use archive photographs as evidence of past APK activities, with explicit captions. Programme names, registration, and contact information come from the official website recorded in `docs/official-site-sources.json`; photographs do not establish individual current course sessions. The current page keeps one programme directory, one archive, and compact FAQ/contact content.
+The user’s AWS Training and IBM references set the corporate direction; blocked reference access means this is an original interpretation, with no verified live-site fidelity claimed. Programme names, registration, and contact information come from the official website recorded in `docs/official-site-sources.json`. Archive photographs describe past APK activities rather than individual current course sessions.
 
 **Key Characteristics:**
-- Official navy/gold identity on warm white.
+- Official navy/gold identity with a white header and navy masthead.
 - Readable Manrope with restrained heading weights.
-- Two-column photographic programme cards.
+- Three-column photographic programme catalogue and native programme discovery.
 - Flat surfaces, native disclosures, and bounded motion.
 
 ## Colors
 
-Official navy and gold sit on warm white. Frontmatter contains the exact source colors; local neutrals support photographs, borders, empty results, and the dark contact section.
+Official navy and gold pair with white reading surfaces and a cool-neutral archive. Frontmatter contains the exact source colors; local neutrals support photographs, borders, empty results, and the dark contact section.
 
 - **Navy** (`navy`): headings, selected category controls, and contact background.
 - **Action Blue** (`blue`): primary actions, links, and registration rows; primary hover deepens to navy.
-- **Gold** (`gold`): hero emphasis, course categories, and focus outlines.
-- **Paper** (`paper`): page and sticky header. White is reserved for programme cards, search, and the dark-section action.
-- **Muted** (`muted`): supporting copy and archive captions. Fine cool dividers organize white content; warmer dividers organize the archive.
+- **Gold** (`gold`): course categories and focus outlines. The lighter `finder-gold` fills the masthead action and enquiry link.
+- **Paper** (`paper`): white page and sticky header, matching programme cards and fields.
+- **Muted** (`muted`): supporting copy and archive captions. Fine cool dividers organize white content; the same cool dividers organize the archive.
 
 **The Evidence Rule.** Archive images describe past APK activity; they do not verify current course sessions or the current office.
 
@@ -224,37 +239,43 @@ Official navy and gold sit on warm white. Frontmatter contains the exact source 
 
 Manrope is self-hosted with WOFF2 weights 400, 500, 600, 700, and 800 and `font-display: swap`; Arial and sans-serif are fallbacks. Frontmatter records actual roles and responsive sizes rather than an invented mathematical scale.
 
-- Hero: `display`, weight 600; 46px at ≤1100px, 44px at ≤760px, and 38px at ≤480px. Supporting copy is 17px/1.75, becoming 16px on mobile; maximum width is 470px.
+- Hero: `display`, weight 600; 46px at ≤1100px, 44px at ≤760px, and 38px at ≤480px. Supporting copy is 17px/1.7, becoming 16px on mobile; maximum width is 520px.
 - Section heading: 36px/700, becoming 30px at ≤760px. Contact heading is 42px/600, becoming 36px on mobile.
-- Programme heading: 24px/700, becoming 22px on mobile. Archive heading: 20px/700, becoming 19px on mobile.
-- Body: 16px/400 with 1.65 line height. Programme summaries and FAQ questions use 15px; disclosure copy and actions use 14px; filter/status/category labels use 13px; photograph captions use 12px.
+- Programme heading: 21px/700, becoming 22px on mobile. Archive heading: 20px/700, becoming 19px on mobile.
+- Body: 16px/400 with 1.65 line height. Programme summaries use 14px and FAQ questions use 15px; disclosure copy and actions use 14px; filter/status/category labels use 13px; photograph captions use 12px.
 - Official wordmark: 18px/800 with a 9px/600 tracked caption; mobile uses 16px and 8px. Preserve these logo-specific roles separately from reading text.
 
 ## Layout
 
 The main container is `min(1200px, calc(100% - 112px))`; at ≤1100px its width is `calc(100% - 64px)` and at ≤760px `calc(100% - 48px)`. Section spacing is 72px vertically, becoming 48px on mobile. The sticky header is 88px tall, becoming 76px on mobile; anchor offsets are 105px and 90px respectively.
 
-Hero columns are `1.1fr 1fr` with a 64px gap, reduced to 36px at ≤1100px. At ≤760px they stack with a 30px gap. Hero image ratios are 1.38 desktop, 1.8 mobile, and 1.55 at ≤480px. Mobile actions stack at ≤480px.
+Hero columns are `1.18fr 1fr` with a 64px gap, reduced to 36px at ≤1100px. At ≤760px they stack with a 30px gap. Hero image ratios are 1.35 desktop, 1.8 mobile, and 1.55 at ≤480px. The native finder uses select/action columns, stacks at ≤1100px, returns to two columns at ≤760px, and stacks with a full-width action at ≤480px.
 
-The initial four programmes form a 2×2 grid with a 28px gap; all seven retain two columns. At ≤760px the gap becomes 20px; at ≤680px the directory becomes one column. Programme photos use a 2.2 aspect ratio. The archive uses four columns with a 22px gap, two at ≤1100px, and one at ≤480px. Archive images use a 1.45 ratio, becoming 1.7 at ≤480px. Archive title/summary minimum heights are removed at ≤1100px.
+All seven programmes appear initially in three columns with a 24px gap; at ≤1100px the grid becomes two columns. At ≤760px the gap becomes 20px; at ≤680px the directory becomes one column. Programme photos use a 2.4 aspect ratio. The archive uses four columns with a 22px gap, two at ≤1100px, and one at ≤480px. Archive images use a 1.45 ratio, becoming 1.7 at ≤480px. Archive title/summary minimum heights are removed at ≤1100px.
 
 Filter buttons wrap. Search is 285px wide and moves to full width at ≤1100px. FAQ columns are `0.8fr 1.2fr` with a 70px gap, stacking at ≤760px. Contact columns are `0.9fr 1.1fr` with a 96px gap (54px at ≤1100px), stacking at ≤760px. Phone/email columns are two on desktop, one at ≤1100px, two at ≤760px, and one at ≤480px. Footer groups stack on mobile.
 
 ## Elevation & Depth
 
-The system is flat: no box shadows are implemented. Depth comes from warm page/archive layers, white programme cards, fine borders, framed photographs, and a solid navy contact section.
+The system is flat: no box shadows are implemented. Depth comes from the navy masthead/contact surfaces, cool archive/enquiry layers, white programme cards, fine borders, framed photographs, and a solid navy contact section.
 
 One hero frame reveal uses `archive-frame` for 600ms, clipping from `inset(0 7% 0 0)` to `inset(0)`; its image settles from scale 1.035 to 1 over 850ms. Both use `cubic-bezier(0.16, 1, 0.3, 1)`. Fine-pointer hover scales programme images to 1.025 over 240ms. Arrow and disclosure transforms use 180ms with that easing; interactive colors/borders use 160ms with default easing. Reduced-motion disables transitions, animations, spatial hover transforms, and smooth scrolling while retaining content and disclosure states.
 
 ## Shapes
 
-Controls, hero/archive image frames, and inner programme photo frames use restrained 4px corners. White programme containers use 12px corners; the official logo uses 3px and archive badges 2px. Programme photographs are inset 12px inside cards. Borders remain thin; no pills or ornamental subject tiles are implemented.
+Buttons, native selects, and the hero frame use 2px corners. Filter/search controls, programme containers, and inner programme/archive photo frames use 4px corners. The official logo uses 3px and archive badges 2px. Programme photographs are inset 12px inside cards. Borders remain thin; no pills or ornamental subject tiles are implemented.
 
 ## Components
 
 ### Buttons and links
 
-Actions use 14px/600 labels, 12px 20px padding, 48px minimum height, 14px icon gap, and 4px corners. Primary is action-blue/white; outline is transparent with blue text/border and cool hover; white is white/navy with warm hover. Text links are blue and underline on hover. Button/link arrows translate 3px on hover or keyboard focus. Global focus is a 3px gold outline with 5px offset.
+Actions use 14px/600 labels, 12px 20px padding, 48px minimum height, 14px icon gap, and 2px corners. Primary is action-blue/white; outline is transparent with blue text/border and cool hover; white is white/navy with warm hover. The finder action uses light gold/navy and a lighter gold hover. Text links are blue and underline on hover. Button/link arrows translate 3px on hover or keyboard focus. Global focus is a 3px gold outline with 5px offset.
+
+### Programme finder and enquiry
+
+The masthead uses a labeled native select containing All programmes and the seven verified titles. Submitting View programme resets the category, expands results, and matches the selected full title; All programmes clears the query. Submission focuses the programme heading and scrolls it into view. Selection alone does not navigate or submit.
+
+The enquiry section is a flat pale surface with a 1px divider, 54px vertical padding, and equal columns separated by 88px (48px at ≤1100px); at ≤760px it stacks with a 28px gap and 42px vertical padding. Its server-rendered native select contains Help me choose and each programme. A native HTML GET form opens a WhatsApp draft only on explicit submission; the browser encodes the selected message into `text`. The visitor reviews and sends in WhatsApp. The site has no contact storage or backend. A separate link reaches the verified official registration form. Native selects use 14px text, 48px minimum height, a 1px field border, 2px corners, and normal keyboard focus.
 
 ### Filters and search
 
@@ -264,19 +285,19 @@ Native labeled search fields have white fill, 4px corners, 44px minimum height, 
 
 ### Programme directory
 
-Photographic white cards use a cool 1px border and 12px outer corners. Body padding is 18px 26px 23px, becoming 16px 20px 20px on mobile. An archive caption sits below every photo; gold category text precedes the programme heading. There are no subject icons or topic chips.
+Photographic white cards use a cool 1px border and 4px outer corners. Body padding is 16px 20px 20px at all sizes. Desktop programme titles/summaries use 55px/69px minimum heights, removed at ≤760px. An archive caption sits below every photo; gold category text precedes the programme heading. There are no subject icons or topic chips.
 
-Four featured programmes appear initially. The expand button toggles all seven with `aria-expanded` and `aria-controls`. Active query/category filtering shows all matches regardless of featured state. Clear course filters resets to the four featured programmes; the empty-state Show all courses action clears filters and expands all seven. Native Programme overview disclosure rotates its chevron 180 degrees. Register interest opens the official registration form in a new tab with a course-specific accessible label.
+All seven programmes appear initially. The expand button toggles all seven with `aria-expanded` and `aria-controls`. Active query/category filtering shows all matches regardless of featured state. Clear course filters and the empty-state Show all courses action clear filters and restore all seven. Native Programme overview disclosure rotates its chevron 180 degrees. Register interest opens the official registration form in a new tab with a course-specific accessible label.
 
 Programme photos default to `object-position: center 46%`. Workshop-presentation, classroom-discussion, and internship-classroom frames use `center top` to keep embedded GPS labels outside the visible crop. Preserve those frame-specific crops and original photo provenance; do not treat them as images of the named current course.
 
 ### Activity archive
 
-Archive cards remain unboxed on the warm archive section. A paper badge labels each image Past activity. Title, summary, and native View activity disclosure sit beneath. The disclosure arrow rotates 90 degrees when open. Empty results use a warm flat panel with a reset action. The archive is the single photographic activity collection rather than several duplicated story/gallery surfaces.
+Archive cards remain unboxed on the cool-neutral archive section. A paper badge labels each image Past activity. Title, summary, and native View activity disclosure sit beneath. The disclosure arrow rotates 90 degrees when open. Empty results use a warm flat panel with a reset action. The archive is the single photographic activity collection rather than several duplicated story/gallery surfaces.
 
 ### Navigation and official identity
 
-Header/footer retain the full official logo image and separate wordmark. The image is contained at 65px × 52px, becoming 55px × 44px at ≤760px. Navigation links cover Courses, Activities, and Contact plus official registration. At ≤760px a 44px menu button toggles a vertical paper panel directly below the sticky header, with `aria-expanded`/`aria-controls`; selecting a link closes it. Preserve the keyboard-visible skip link. No active-route, disabled, error, or modal state is implemented.
+Header/footer retain the full official logo image and separate wordmark. The image is contained at 65px × 52px, becoming 55px × 44px at ≤760px. Navigation links cover Programmes, Learning activities, Visit us, and Enquire as same-page anchors. Enquire targets the on-page enquiry section, with no new-tab target. At ≤760px a 44px menu button toggles a vertical paper panel directly below the sticky header, with `aria-expanded`/`aria-controls`; selecting a link closes it. Preserve the keyboard-visible skip link. No active-route, disabled, error, or modal state is implemented.
 
 ### FAQ and contact
 
@@ -287,7 +308,7 @@ FAQ uses native details with browser disclosure markers, thin dividers, 20px sum
 ### Do:
 - **Do** preserve the full official logo without redrawing, recoloring, or cropping it.
 - **Do** label archive photography as past activity and preserve meaningful alt text.
-- **Do** use navy actions, gold emphasis, warm white space, and the observed readable type roles.
+- **Do** use navy actions, gold discovery emphasis, white reading space, and the observed readable type roles.
 - **Do** retain keyboard focus, native disclosure, filter announcements, and reduced-motion behavior.
 
 ### Don't:
