@@ -1,107 +1,283 @@
 import Image from "next/image";
+import Arrow from "./arrow";
+import Link from "next/link";
 import ActivityExplorer from "./activity-explorer";
-import Navigation from "./navigation";
-import Brand from "./brand";
 import CourseExplorer from "./course-explorer";
 import { registrationUrl } from "./course-data";
 import ProgrammeEnquiry from "./programme-enquiry";
-
-function Arrow({ diagonal = false }: { diagonal?: boolean }) {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d={diagonal ? "M6 18 18 6M6 6h12v12" : "M4 12h16m-6-6 6 6-6 6"}
-        stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
+import { business, createPageMetadata, serializeJsonLd, siteUrl } from "./site";
+export const metadata = createPageMetadata(
+  "Technical courses & career preparation in Chennai | APK Infotech",
+  "Explore APK Infotech’s seven programmes in software, AI, VLSI, cyber security, robotics, and career preparation. View real activities and enquire with the Chennai team.",
+  "/",
+);
 export default function Home() {
   return (
-    <>
-      <a className="skip-link" href="#main">Skip to content</a>
-      <Navigation />
-      <main id="main">
-        <CourseExplorer
-          hero={
-            <>
-              <h1>Build your<br />technical expertise.</h1>
-              <p>Explore seven programmes in software, AI, electronics, security, and career preparation.</p>
-            </>
-          }
-          photograph={
-            <figure className="hero-visual">
-              <div className="hero-photo">
-                <Image src="/images/learners.webp"
-                  alt="Participants gathered for a past APK Infotech project review and internship event"
-                  width={1280} height={960} priority sizes="(max-width: 760px) 100vw, 42vw" />
-              </div>
-              <figcaption>Project reviews and internships <span>Past APK Infotech activity</span></figcaption>
-            </figure>
-          }
-        />
-        <ProgrammeEnquiry />
-        <section id="activities" className="archive-section">
-          <div id="gallery" className="wrap section">
-            <div className="section-heading">
+    <main id="main">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": `${siteUrl}/#organization`,
+            name: business.name,
+            url: siteUrl,
+            logo: `${siteUrl}/images/apk-official-logo.webp`,
+            telephone: "+918939410255",
+            email: business.email,
+            sameAs: ["https://apkinfotech.in/"],
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "No. 65, 5th Street, Ram Nagar, Mannivakkam",
+              addressLocality: "Chennai",
+              addressRegion: "Tamil Nadu",
+              postalCode: "600048",
+              addressCountry: "IN",
+            },
+          }),
+        }}
+      />
+      <CourseExplorer
+        hero={
+          <>
+            <h1>
+              Technical skills.
+              <br />
+              Practical experience.
+            </h1>
+            <p>
+              Explore programmes in software, AI, electronics, security, and
+              career preparation. Find your next step with our Chennai team.
+            </p>
+          </>
+        }
+        photograph={
+          <figure className="hero-visual">
+            <div className="hero-photo">
+              <Image
+                src="/images/learners.webp"
+                alt="Participants gathered for a past APK Infotech project review and internship event"
+                width={1280}
+                height={822}
+                priority
+                fetchPriority="high"
+                sizes="(max-width: 480px) calc(100vw - 36px), (max-width: 760px) calc(100vw - 48px), (max-width: 1100px) calc(46vw - 46px), (max-width: 1320px) calc(46vw - 81px), 522px"
+              />
+            </div>
+            <figcaption>
+              Project reviews and internships{" "}
+              <span>Past APK Infotech activity</span>
+            </figcaption>
+          </figure>
+        }
+      />
+      <section id="about" className="about-section">
+        <div className="wrap section">
+          <div className="section-heading">
+            <div>
+              <h2>Get to know APK Infotech.</h2>
+              <p>
+                Technical training and career preparation in Mannivakkam,
+                Chennai.
+              </p>
+            </div>
+            <a className="text-link" href="#contact">
+              Contact our team <Arrow />
+            </a>
+          </div>
+          <div className="about-grid">
+            <div>
+              <h3>A range of technical subjects</h3>
+              <p>
+                Compare seven programmes, from Full Stack Web Development and
+                Agentic AI to VLSI, Cyber Security, and Robotics and PCB Design.
+              </p>
+            </div>
+            <div>
+              <h3>A closer look at learning</h3>
+              <p>
+                Browse our archive of technical workshops, internship
+                activities, college engagement, and project reviews.
+              </p>
+            </div>
+            <div>
+              <h3>A team you can speak with</h3>
+              <p>
+                Contact our Chennai office directly to discuss your background,
+                programme topics, and current learning options.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="activities" className="archive-section">
+        <div id="gallery" className="wrap section">
+          <div className="section-heading">
+            <div>
+              <h2>A closer look at the work.</h2>
+              <p>
+                Workshops, internships, and project reviews from past APK
+                Infotech activities.
+              </p>
+            </div>
+            <span className="archive-label">From our activity archive</span>
+          </div>
+          <ActivityExplorer />
+          <p className="activity-footnote">
+            These are highlights of past activities.{" "}
+            <a href="#contact">
+              Ask about upcoming programmes <Arrow diagonal />
+            </a>
+          </p>
+        </div>
+      </section>
+      <section id="internships" className="wrap section internship-section">
+        <figure className="internship-photo">
+          <Image
+            src="/images/summer-internship.webp"
+            alt="Participants and trainers gathered at a past APK Infotech summer internship activity"
+            width={1280}
+            height={960}
+            sizes="(max-width: 760px) 100vw, 45vw"
+          />
+          <figcaption>Summer internship · Past activity</figcaption>
+        </figure>
+        <div>
+          <h2>
+            Take a closer look
+            <br />
+            at internships.
+          </h2>
+          <p>
+            Our archive includes internship activities and project reviews.
+            Speak with the team about opportunities available now and how they
+            fit your interests.
+          </p>
+          <ul>
+            <li>Who can apply and what knowledge is expected?</li>
+            <li>What work and guidance are included?</li>
+            <li>When is the next intake, and what are the fees?</li>
+          </ul>
+          <Link className="button primary" href="/enquire?course=internships">
+            Ask about internships <Arrow />
+          </Link>
+        </div>
+      </section>
+      <section className="faq-section wrap section">
+        <div>
+          <h2>
+            A few questions
+            <br />
+            before you begin.
+          </h2>
+          <p>Make an informed choice before registering.</p>
+        </div>
+        <div className="faq-list">
+          <details>
+            <summary>Which programme is right for me?</summary>
+            <p>
+              Read the confirmed topics on each course page, then{" "}
+              <Link href="/enquire">
+                tell the team about your interests and background
+              </Link>
+              . Ask about eligibility and any prior knowledge needed.
+            </p>
+          </details>
+          <details>
+            <summary>Where can I find fees and schedules?</summary>
+            <p>
+              Call <a href="tel:+918939410255">+91 89394 10255</a> or{" "}
+              <a href="mailto:official@apkinfotech.in">email the team</a> for
+              current fees, duration, format, schedules, and entry requirements.
+            </p>
+          </details>
+          <details>
+            <summary>Who will be teaching my programme?</summary>
+            <p>
+              Ask the team for the assigned trainer’s background, teaching
+              experience, and support available for your chosen batch.
+            </p>
+          </details>
+          <details>
+            <summary>
+              What practical work and placement support are included?
+            </summary>
+            <p>
+              Our photographs show past learning activities. Confirm the
+              exercises, project scope, and support included in your programme.
+              The Placement Readiness Program focuses on career preparation; no
+              job outcome is guaranteed here.
+            </p>
+          </details>
+          <details>
+            <summary>How do I register my interest?</summary>
+            <p>
+              Use APK Infotech’s{" "}
+              <a href={registrationUrl} target="_blank" rel="noreferrer">
+                official registration form
+              </a>
+              . Registration of interest does not confirm a place. Ask the team
+              about the next steps.
+            </p>
+          </details>
+        </div>
+      </section>
+      <ProgrammeEnquiry />
+      <section id="contact" className="contact-section">
+        <div className="wrap contact-grid">
+          <div className="contact-intro">
+            <h2>
+              Let’s talk about
+              <br />
+              what’s next.
+            </h2>
+            <p>Ask about courses, upcoming batches, and career preparation.</p>
+            <a
+              className="button white"
+              href={business.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Chat with our team <Arrow diagonal />
+            </a>
+          </div>
+          <div className="contact-details">
+            <div id="location" className="address">
+              <h3>Visit our Chennai office</h3>
+              <address>
+                No. 65, 5th Street, Ram Nagar
+                <br />
+                Mannivakkam, Chennai
+                <br />
+                Tamil Nadu 600048
+              </address>
+              <a
+                className="text-link"
+                href={business.maps}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Get directions <Arrow diagonal />
+              </a>
+              <p className="visit-note">
+                Call ahead to confirm visiting hours.
+              </p>
+            </div>
+            <div className="contact-options">
               <div>
-                <h2>Workshops, internships,<br />and project reviews</h2>
-                <p>A selection from past APK Infotech activities.</p>
+                <span>Call us</span>
+                <a href="tel:+918939410255">{business.phone}</a>
+                <a href="tel:+916381272033">{business.secondaryPhone}</a>
               </div>
-              <span className="archive-label">From our activity archive</span>
-            </div>
-            <ActivityExplorer />
-            <p className="activity-footnote">These are highlights of past activities. <a href="#contact">Ask about upcoming programmes <Arrow diagonal /></a></p>
-          </div>
-        </section>
-        <section className="faq-section wrap section">
-          <div><h2>Before you register</h2><p>Programme details and how to get started.</p></div>
-          <div className="faq-list">
-            <details>
-              <summary>How do I register for a programme?</summary>
-              <p>Use APK Infotech’s <a href={registrationUrl} target="_blank" rel="noreferrer">official registration form</a> to register your interest. Contact the team to confirm the next available batch.</p>
-            </details>
-            <details>
-              <summary>Where can I find fees and schedules?</summary>
-              <p>Call <a href="tel:+918939410255">+91 89394 10255</a> or <a href="mailto:official@apkinfotech.in">email the team</a> for the latest fees, duration, schedules, and entry requirements.</p>
-            </details>
-            <details>
-              <summary>Can I ask about internships and placement preparation?</summary>
-              <p>Yes. APK Infotech’s official website lists internships and placement support. Contact the team to discuss current availability and what support is included.</p>
-            </details>
-          </div>
-        </section>
-        <section id="contact" className="contact-section">
-          <div className="wrap contact-grid">
-            <div className="contact-intro">
-              <h2>Speak with<br />APK Infotech</h2>
-              <p>Ask about courses, upcoming batches, and career preparation.</p>
-              <a className="button white" href="https://wa.me/918939410255" target="_blank" rel="noreferrer">Chat with our team <Arrow diagonal /></a>
-            </div>
-            <div className="contact-details">
-              <div id="location" className="address">
-                <h3>Visit our Chennai office</h3>
-                <address>No. 65, 5th Street, Ram Nagar<br />Mannivakkam, Chennai<br />Tamil Nadu 600048</address>
-                <a className="text-link" href="https://maps.google.com/?q=65,+5th+Street,+Ram+Nagar,+Manivakkam,+Chennai,+Tamil+Nadu+600048" target="_blank" rel="noreferrer">Get directions <Arrow diagonal /></a>
-                <p className="visit-note">Call ahead to confirm visiting hours.</p>
-              </div>
-              <div className="contact-options">
-                <div><span>Call us</span><a href="tel:+918939410255">+91 89394 10255</a><a href="tel:+916381272033">+91 63812 72033</a></div>
-                <div><span>Email us</span><a href="mailto:official@apkinfotech.in">official@apkinfotech.in</a></div>
+              <div>
+                <span>Email us</span>
+                <a href={`mailto:${business.email}`}>{business.email}</a>
               </div>
             </div>
           </div>
-        </section>
-      </main>
-      <footer className="wrap footer">
-        <div className="footer-top">
-          <Brand />
-          <nav aria-label="Footer navigation"><a href="#courses">Courses</a><a href="#activities">Activities</a><a href="#location">Visit us</a><a href="#contact">Contact</a></nav>
         </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} APK Infotech IT Solutions Pvt Ltd.</span>
-          <a href="https://apkinfotech.in/" target="_blank" rel="noreferrer">Official website <Arrow diagonal /></a>
-        </div>
-      </footer>
-    </>
+      </section>
+    </main>
   );
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-09T11:16:35.926444+00:00",
+  "generatedAt": "2026-10-09T12:49:31.042455+00:00",
   "title": "Design System: APK Infotech",
   "extensions": {
     "colorMeta": {
@@ -91,6 +91,38 @@
       "enquiry-line": {
         "role": "neutral",
         "displayName": "Enquiry Line"
+      },
+      "hero-outline-line": {
+        "role": "neutral",
+        "displayName": "Hero Outline Line"
+      },
+      "hero-outline-hover": {
+        "role": "neutral",
+        "displayName": "Hero Outline Hover"
+      },
+      "lightbox-backdrop": {
+        "role": "neutral",
+        "displayName": "Lightbox Backdrop"
+      },
+      "breadcrumb-divider": {
+        "role": "neutral",
+        "displayName": "Breadcrumb Divider"
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Error"
+      },
+      "error-bg": {
+        "role": "neutral",
+        "displayName": "Error Bg"
+      },
+      "error-line": {
+        "role": "neutral",
+        "displayName": "Error Line"
+      },
+      "status-line": {
+        "role": "neutral",
+        "displayName": "Status Line"
       }
     },
     "typographyMeta": {
@@ -173,6 +205,38 @@
       "display-compact": {
         "displayName": "Display Compact",
         "purpose": "Observed display compact role; responsive usage documented in DESIGN.md."
+      },
+      "wordmark-narrow": {
+        "displayName": "Wordmark Narrow",
+        "purpose": "Actual implemented wordmark narrow role."
+      },
+      "thumbnail-caption": {
+        "displayName": "Thumbnail Caption",
+        "purpose": "Actual implemented thumbnail caption role."
+      },
+      "detail-aside-title": {
+        "displayName": "Detail Aside Title",
+        "purpose": "Actual implemented detail aside title role."
+      },
+      "content-headline-mobile": {
+        "displayName": "Content Headline Mobile",
+        "purpose": "Actual implemented content headline mobile role."
+      },
+      "content-headline": {
+        "displayName": "Content Headline",
+        "purpose": "Actual implemented content headline role."
+      },
+      "detail-display": {
+        "displayName": "Detail Display",
+        "purpose": "Actual implemented detail display role."
+      },
+      "page-display": {
+        "displayName": "Page Display",
+        "purpose": "Actual implemented page display role."
+      },
+      "display-small-screen": {
+        "displayName": "Display Small Screen",
+        "purpose": "Actual implemented display small screen role."
       }
     },
     "shadows": [],
@@ -250,12 +314,12 @@
       "css": ".ds-outline{font-family:var(--font,Manrope,Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:2px;font-size:14px;font-weight:600;cursor:pointer;transition:color 160ms,background-color 160ms,border-color 160ms;background:transparent;color:var(--blue,#173f75);border-color:var(--blue,#173f75)}.ds-outline:hover{background:#edf1f5}.ds-outline:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}.ds-outline svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-outline:hover svg,.ds-outline:focus-visible svg{transform:translateX(3px)}@media(prefers-reduced-motion:reduce){.ds-outline,.ds-outline svg{transition:none}.ds-outline:hover svg,.ds-outline:focus-visible svg{transform:none}}"
     },
     {
-      "name": "White Button",
-      "kind": "button",
-      "refersTo": "button-white",
-      "description": "Observed action styling and keyboard/hover feedback.",
-      "html": "<button class=\"ds-white\">Chat with our team<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h16m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></button>",
-      "css": ".ds-white{font-family:var(--font,Manrope,Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:2px;font-size:14px;font-weight:600;cursor:pointer;transition:color 160ms,background-color 160ms,border-color 160ms;background:white;color:var(--navy,#081d37)}.ds-white:hover{background:#eee7d9}.ds-white:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}.ds-white svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-white:hover svg,.ds-white:focus-visible svg{transform:translateX(3px)}@media(prefers-reduced-motion:reduce){.ds-white,.ds-white svg{transition:none}.ds-white:hover svg,.ds-white:focus-visible svg{transform:none}}"
+      "name": "Enquiry Field",
+      "kind": "input",
+      "refersTo": "enquiry-field",
+      "description": "Required enquiry email field with accessible invalid state.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-email\">Email (required)</label><input id=\"ds-email\" type=\"email\" autocomplete=\"email\" required aria-invalid=\"true\" aria-describedby=\"ds-email-error\"><p id=\"ds-email-error\">Enter a valid email address.</p></div>",
+      "css": ".ds-field{font-family:var(--font,Manrope,Arial,sans-serif)}.ds-field label{display:block;font-size:13px;font-weight:600;margin-bottom:10px}.ds-field input{display:block;width:100%;min-height:48px;background:white;color:var(--navy,#081d37);border:1px solid #a3acb7;border-radius:3px;padding:11px 12px;font:inherit}.ds-field input[aria-invalid=\"true\"]{border-color:#a22424}.ds-field input:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}.ds-field p{color:#a22424;font-size:13px;margin-top:8px}.ds-field input:disabled{cursor:default;opacity:.65}"
     },
     {
       "name": "Category Filter",
@@ -285,24 +349,24 @@
       "name": "Programme Card Body",
       "kind": "card",
       "refersTo": "course-card",
-      "description": "Actual programme body and native disclosure; archive photograph and registration row are documented in DESIGN.md.",
-      "html": "<article class=\"ds-course\"><span>Development</span><h3>Full Stack Web Development</h3><p>Build for the web, from interface to database.</p><details><summary>Programme overview <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></summary><p>Learn the MERN stack with React, Node.js, MongoDB, and Express through real-world projects.</p></details></article>",
-      "css": ".ds-course{font-family:var(--font,Manrope,Arial,sans-serif);max-width:480px;background:white;color:var(--navy,#081d37);border:1px solid var(--line,#dce1e5);border-radius:4px;padding:16px 20px 20px}.ds-course>span{display:block;color:var(--gold,#956811);font-size:13px;font-weight:600;margin-bottom:6px}.ds-course h3{margin:0;font-size:21px;font-weight:700;letter-spacing:-.025em;line-height:1.3}.ds-course>p{color:var(--muted,#536078);font-size:14px;margin:12px 0 0;line-height:1.65}.ds-course details{border-top:1px solid var(--line,#dce1e5);margin-top:20px}.ds-course summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:14px;cursor:pointer;list-style:none;font-size:14px;font-weight:600;transition:color 160ms,background-color 160ms,border-color 160ms}.ds-course summary::-webkit-details-marker{display:none}.ds-course summary svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-course details[open] summary svg{transform:rotate(180deg)}.ds-course details>p{font-size:14px;color:var(--muted,#536078);padding:0 0 16px;line-height:1.65}.ds-course summary:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-course summary,.ds-course summary svg{transition:none}}"
+      "description": "Actual programme body with category metadata below the heading and native disclosure; archive image and route actions are documented in DESIGN.md.",
+      "html": "<article class=\"ds-course\"><h3>Full Stack Web Development</h3><span>Development</span><p>Build for the web, from interface to database.</p><details><summary>Programme overview <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></summary><p>Learn the MERN stack with React, Node.js, MongoDB, and Express through real-world projects.</p></details></article>",
+      "css": ".ds-course{font-family:var(--font,Manrope,Arial,sans-serif);max-width:480px;background:white;color:var(--navy,#081d37);border:1px solid var(--line,#dce1e5);border-radius:4px;padding:16px 20px 20px}.ds-course>span{display:block;color:var(--gold,#956811);font-size:13px;font-weight:600;margin-top:8px}.ds-course h3{margin:0;font-size:21px;font-weight:700;letter-spacing:-.025em;line-height:1.3}.ds-course>p{color:var(--muted,#536078);font-size:14px;margin:12px 0 0;line-height:1.65}.ds-course details{border-top:1px solid var(--line,#dce1e5);margin-top:20px}.ds-course summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:14px;cursor:pointer;list-style:none;font-size:14px;font-weight:600;transition:color 160ms,background-color 160ms,border-color 160ms}.ds-course summary::-webkit-details-marker{display:none}.ds-course summary svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-course details[open] summary svg{transform:rotate(180deg)}.ds-course details>p{font-size:14px;color:var(--muted,#536078);padding:0 0 16px;line-height:1.65}.ds-course summary:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-course summary,.ds-course summary svg{transition:none}}"
     },
     {
       "name": "Navigation",
       "kind": "nav",
       "refersTo": "navigation",
       "description": "Desktop section links; mobile toggle behavior remains in the application.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#courses\">Programmes</a><a href=\"#activities\">Learning activities</a><a href=\"#location\">Visit us</a><a href=\"#enquiry\">Enquire</a></nav>",
-      "css": ".ds-nav{font-family:var(--font,Manrope,Arial,sans-serif);display:flex;align-items:center;gap:28px;font-size:14px;font-weight:600;background:var(--paper,#fff);color:var(--navy,#081d37)}.ds-nav a{color:inherit;text-decoration:none;text-underline-offset:5px;transition:color 160ms,background-color 160ms,border-color 160ms}.ds-nav a:hover{color:var(--blue,#173f75);text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-nav a{transition:none}}"
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"/\" aria-current=\"page\">Home</a><a href=\"/#courses\">Courses</a><a href=\"/#internships\">Internships</a><a href=\"/#activities\">Activities</a><a href=\"/#about\">About</a><a href=\"/#contact\">Contact</a></nav>",
+      "css": ".ds-nav{font-family:var(--font,Manrope,Arial,sans-serif);display:flex;align-items:center;gap:20px;font-size:14px;font-weight:600;background:var(--paper,#fff);color:var(--navy,#081d37)}.ds-nav a{color:inherit;text-decoration:none;text-underline-offset:5px;transition:color 160ms,background-color 160ms,border-color 160ms}.ds-nav a:hover{color:var(--blue,#173f75);text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-nav a{transition:none}}.ds-nav a[aria-current]{color:var(--blue,#173f75);text-decoration:underline;text-decoration-thickness:2px}"
     },
     {
-      "name": "Gold Finder Button",
+      "name": "Gold Discovery Button",
       "kind": "button",
       "refersTo": "button-gold",
-      "description": "Masthead programme finder action.",
-      "html": "<button class=\"ds-gold\">View programme<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h16m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></button>",
+      "description": "Gold discovery action shared by hero and programme finder.",
+      "html": "<button class=\"ds-gold\">Explore courses<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h16m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></button>",
       "css": ".ds-gold{font-family:var(--font,Manrope,Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:2px;font-size:14px;font-weight:600;cursor:pointer;transition:color 160ms,background-color 160ms,border-color 160ms;background:#e4bc71;color:var(--navy,#081d37)}.ds-gold:hover{background:#f3d8a4}.ds-gold:focus-visible{outline:3px solid var(--gold,#956811);outline-offset:5px}.ds-gold svg{transition:transform 180ms var(--ease,cubic-bezier(.16,1,.3,1))}.ds-gold:hover svg,.ds-gold:focus-visible svg{transform:translateX(3px)}@media(prefers-reduced-motion:reduce){.ds-gold,.ds-gold svg{transition:none}.ds-gold:hover svg,.ds-gold:focus-visible svg{transform:none}}"
     },
     {
@@ -316,7 +380,7 @@
   ],
   "narrative": {
     "northStar": "Enterprise training catalogue",
-    "overview": "The approved enterprise training catalogue keeps APK\u2019s intact official logo and navy-and-gold identity. A white header leads into a full-width navy masthead with a white heading, documentary photograph, native programme selector, and clear gold action. Self-hosted Manrope supports a readable, compact programme directory.\n\nThe user\u2019s AWS Training and IBM references set the corporate direction; blocked reference access means this is an original interpretation, with no verified live-site fidelity claimed. Programme names, registration, and contact information come from the official website recorded in `docs/official-site-sources.json`. Archive photographs describe past APK activities rather than individual current course sessions.",
+    "overview": "The complete enterprise training site keeps APK\u2019s intact official logo and navy-and-gold identity across a shared white header, navy photographic mastheads, programme pages, and readable white content. The home hero uses two direct actions; programme discovery, archive viewing, and course-aware enquiry each have their own clear place. Self-hosted Manrope provides the consistent typographic voice.\n\nThis was a code-led refinement preserving the committed, user-pinned brand and enterprise world. A new concept roll and seed were omitted; no approved visual comp or quality-bar card was available. AWS Training and IBM reference access was blocked, so visual fidelity remains unverified. The direction and scope are recorded in `docs/superpowers/specs/2026-10-09-complete-site.md`; no seed or visual approval is implied.\n\nThe user\u2019s AWS Training and IBM references establish the corporate direction; this remains an original interpretation without verified live-reference fidelity. Official programme topics, registration, and contact information are recorded in `docs/official-site-sources.json`. Documentary photographs remain explicitly labeled past activities. Claims about current fees, batches, eligibility, certification, trainers, and outcomes require confirmation.",
     "keyCharacteristics": [
       "Official navy/gold identity with a white header and navy masthead.",
       "Readable Manrope with restrained heading weights.",

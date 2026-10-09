@@ -1,11 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function Brand() {
   return (
-    <a
-      className="brand official-brand"
-      href="#main"
-      aria-label="APK Infotech home"
-    >
+    <Link className="brand official-brand" href="/#main">
       <Image
         src="/images/apk-official-logo.webp"
         alt=""
@@ -14,9 +11,9 @@ export default function Brand() {
         className="official-logo"
       />
       <span className="official-wordmark">
-        <strong>APK INFOTECH</strong>
-        <span>IT SOLUTIONS PVT LTD</span>
+        <strong>APK INFOTECH</strong> <span>IT SOLUTIONS PVT LTD</span>
       </span>
-    </a>
+      <span className="sr-only"> home</span>
+    </Link>
   );
 }

@@ -1,55 +1,24 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
-const activities = [
-  {
-    title: "DevOps & Docker workshop",
-    category: "Workshops",
-    image: "docker-workshop",
-    tags: "DevOps · Docker",
-    summary: "A two-day DevOps and Docker workshop.",
-    detail: "A two-day workshop captured in our activity archive.",
-    alt: "Learners discussing DevOps and Docker in a classroom workshop",
-  },
-  {
-    title: "Summer internship experience",
-    category: "Internships",
-    image: "summer-internship",
-    tags: "Internship · Classroom learning",
-    summary: "Classroom sessions from the summer 2026 internship.",
-    detail:
-      "Classroom moments from the supplied summer internship 2026 photo collection.",
-    alt: "An instructor leading a summer internship session",
-  },
-  {
-    title: "Project reviews & presentations",
-    category: "Projects",
-    image: "project-review",
-    tags: "Project review · Presentations",
-    summary: "Project presentations, reviews, and certification.",
-    detail:
-      "Highlights from our project review, internship, and certification event collection.",
-    alt: "Participants gathered for a project review event",
-  },
-  {
-    title: "College engagement",
-    category: "College engagement",
-    image: "college-engagement",
-    tags: "College engagement · MOU event",
-    summary: "Krishnaswamy Engineering College and Technology MOU event.",
-    detail:
-      "Photos from the Krishnaswamy Engineering College and Technology MOU event in the supplied archive.",
-    alt: "A group photograph at a college MOU event",
-  },
-];
-const categories = [
-  "All activities",
-  "Workshops",
-  "Internships",
-  "Projects",
-  "College engagement",
-];
+import { useEffect, useId, useRef, useState } from "react";
+import { activities, activityCategories, type Activity } from "./activity-data";
 export default function ActivityExplorer() {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const launchButtonRef = useRef<HTMLButtonElement | null>(null);
+  const [selectedPhoto, setSelectedPhoto] = useState<Activity | null>(null);
+  const captionId = useId();
+
+  useEffect(() => {
+    if (selectedPhoto && dialogRef.current && !dialogRef.current.open) {
+      dialogRef.current.showModal();
+    }
+  }, [selectedPhoto]);
+
+  function closePhoto() {
+    setSelectedPhoto(null);
+    launchButtonRef.current?.focus();
+  }
+
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All activities");
   const visible = activities.filter(
@@ -67,7 +36,7 @@ export default function ActivityExplorer() {
           role="group"
           aria-label="Filter activities by category"
         >
-          {categories.map((name) => (
+          {activityCategories.map((name) => (
             <button
               type="button"
               key={name}
@@ -122,14 +91,26 @@ export default function ActivityExplorer() {
                 alt={item.alt}
                 width={1280}
                 height={960}
-                sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 25vw"
+                sizes="(max-width: 480px) 96px, (max-width: 1100px) 45vw, 25vw"
               />
               <span>Past activity</span>
             </div>
             <div className="card-body">
-              <span className="card-tags">{item.tags}</span>
               <h3>{item.title}</h3>
+              <span className="card-tags">{item.tags}</span>
               <p>{item.summary}</p>
+              <button
+                type="button"
+                className="photo-button"
+                aria-label={`View photo: ${item.title}`}
+                aria-haspopup="dialog"
+                onClick={(event) => {
+                  launchButtonRef.current = event.currentTarget;
+                  setSelectedPhoto(item);
+                }}
+              >
+                View photo
+              </button>
               <details>
                 <summary>
                   View activity{" "}
@@ -169,6 +150,37 @@ export default function ActivityExplorer() {
           </div>
         )}
       </div>
+      <dialog
+        ref={dialogRef}
+        className="lightbox-dialog"
+        aria-labelledby={captionId}
+        onClose={closePhoto}
+      >
+        <div className="lightbox-content">
+          <button
+            type="button"
+            className="lightbox-close"
+            onClick={() => dialogRef.current?.close()}
+            autoFocus
+          >
+            Close photo
+          </button>
+          {selectedPhoto && (
+            <figure>
+              <Image
+                src={`/images/${selectedPhoto.image}.webp`}
+                alt={selectedPhoto.alt}
+                width={1280}
+                height={960}
+                sizes="(max-width: 1000px) 95vw, 1000px"
+              />
+              <figcaption id={captionId}>
+                Past activity · {selectedPhoto.title}
+              </figcaption>
+            </figure>
+          )}
+        </div>
+      </dialog>
     </>
   );
 }
