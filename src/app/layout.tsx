@@ -3,9 +3,9 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "APK Infotech | Hands-on learning, shared experiences",
+  title: "APK Infotech | Courses, internships & career preparation",
   description:
-    "Explore APK Infotech workshops, internships, project reviews, and college engagement through real moments from our learning community.",
+    "Explore APK Infotech programmes in Full Stack Development, Agentic AI, VLSI, Cyber Security, Robotics, and career readiness. Connect with our team in Mannivakkam, Chennai.",
   robots: { index: false, follow: false },
 };
 

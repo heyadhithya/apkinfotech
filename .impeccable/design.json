@@ -1,12 +1,12 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-09T09:31:36.045872+00:00",
+  "generatedAt": "2026-10-09T10:17:42.632603+00:00",
   "title": "Design System: APK Infotech",
   "extensions": {
     "colorMeta": {
       "blue": {
         "role": "primary",
-        "displayName": "Blue"
+        "displayName": "Official Navy Blue"
       },
       "navy": {
         "role": "neutral",
@@ -30,7 +30,7 @@
       },
       "blue-hover": {
         "role": "primary",
-        "displayName": "Blue Hover"
+        "displayName": "Deep Navy Action"
       },
       "white-hover": {
         "role": "neutral",
@@ -119,6 +119,70 @@
       "closing-text": {
         "role": "neutral",
         "displayName": "Closing Text"
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Gold"
+      },
+      "closing-bg": {
+        "role": "neutral",
+        "displayName": "Closing Bg"
+      },
+      "logo-bg": {
+        "role": "neutral",
+        "displayName": "Logo Bg"
+      },
+      "course-code-bg": {
+        "role": "neutral",
+        "displayName": "Course Code Bg"
+      },
+      "course-ai-bg": {
+        "role": "neutral",
+        "displayName": "Course Ai Bg"
+      },
+      "course-ai-ink": {
+        "role": "neutral",
+        "displayName": "Course Ai Ink"
+      },
+      "course-hardware-bg": {
+        "role": "neutral",
+        "displayName": "Course Hardware Bg"
+      },
+      "course-hardware-ink": {
+        "role": "neutral",
+        "displayName": "Course Hardware Ink"
+      },
+      "course-security-bg": {
+        "role": "neutral",
+        "displayName": "Course Security Bg"
+      },
+      "course-security-ink": {
+        "role": "neutral",
+        "displayName": "Course Security Ink"
+      },
+      "course-career-bg": {
+        "role": "neutral",
+        "displayName": "Course Career Bg"
+      },
+      "course-career-ink": {
+        "role": "neutral",
+        "displayName": "Course Career Ink"
+      },
+      "topic-bg": {
+        "role": "neutral",
+        "displayName": "Topic Bg"
+      },
+      "topic-ink": {
+        "role": "neutral",
+        "displayName": "Topic Ink"
+      },
+      "contact-line": {
+        "role": "neutral",
+        "displayName": "Contact Line"
+      },
+      "contact-label": {
+        "role": "neutral",
+        "displayName": "Contact Label"
       }
     },
     "typographyMeta": {
@@ -141,6 +205,86 @@
       "label": {
         "displayName": "Label",
         "purpose": "Category labels."
+      },
+      "wordmark-mobile": {
+        "displayName": "Wordmark Mobile",
+        "purpose": "Observed contextual 7px role; responsive usage documented in DESIGN.md."
+      },
+      "wordmark-caption": {
+        "displayName": "Wordmark Caption",
+        "purpose": "Observed contextual 8px role; responsive usage documented in DESIGN.md."
+      },
+      "metadata": {
+        "displayName": "Metadata",
+        "purpose": "Observed contextual 9px role; responsive usage documented in DESIGN.md."
+      },
+      "compact-label": {
+        "displayName": "Compact Label",
+        "purpose": "Observed contextual 10px role; responsive usage documented in DESIGN.md."
+      },
+      "support-copy": {
+        "displayName": "Support Copy",
+        "purpose": "Observed contextual 12px role; responsive usage documented in DESIGN.md."
+      },
+      "navigation": {
+        "displayName": "Navigation",
+        "purpose": "Observed contextual 13px role; responsive usage documented in DESIGN.md."
+      },
+      "intro-mobile": {
+        "displayName": "Intro Mobile",
+        "purpose": "Observed contextual 14px role; responsive usage documented in DESIGN.md."
+      },
+      "intro": {
+        "displayName": "Intro",
+        "purpose": "Observed contextual 16px role; responsive usage documented in DESIGN.md."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Observed contextual 19px role; responsive usage documented in DESIGN.md."
+      },
+      "course-title-narrow": {
+        "displayName": "Course Title Narrow",
+        "purpose": "Observed contextual 20px role; responsive usage documented in DESIGN.md."
+      },
+      "gallery-title-mobile": {
+        "displayName": "Gallery Title Mobile",
+        "purpose": "Observed contextual 23px role; responsive usage documented in DESIGN.md."
+      },
+      "faq-headline-mobile": {
+        "displayName": "Faq Headline Mobile",
+        "purpose": "Observed contextual 27px role; responsive usage documented in DESIGN.md."
+      },
+      "closing-headline-mobile": {
+        "displayName": "Closing Headline Mobile",
+        "purpose": "Observed contextual 28px role; responsive usage documented in DESIGN.md."
+      },
+      "headline-mobile": {
+        "displayName": "Headline Mobile",
+        "purpose": "Observed contextual 29px role; responsive usage documented in DESIGN.md."
+      },
+      "story-and-faq-headline": {
+        "displayName": "Story And Faq Headline",
+        "purpose": "Observed contextual 30px role; responsive usage documented in DESIGN.md."
+      },
+      "closing-headline": {
+        "displayName": "Closing Headline",
+        "purpose": "Observed contextual 33px role; responsive usage documented in DESIGN.md."
+      },
+      "story-headline": {
+        "displayName": "Story Headline",
+        "purpose": "Observed contextual 37px role; responsive usage documented in DESIGN.md."
+      },
+      "display-narrow": {
+        "displayName": "Display Narrow",
+        "purpose": "Observed contextual 38px role; responsive usage documented in DESIGN.md."
+      },
+      "display-mobile": {
+        "displayName": "Display Mobile",
+        "purpose": "Observed contextual 43px role; responsive usage documented in DESIGN.md."
+      },
+      "display-compact": {
+        "displayName": "Display Compact",
+        "purpose": "Observed contextual 47px role; responsive usage documented in DESIGN.md."
       }
     },
     "shadows": [
@@ -207,8 +351,8 @@
       "kind": "button",
       "refersTo": "button-primary",
       "description": "Observed primary action with arrow and hover/focus states.",
-      "html": "<button class=\"ds-button-primary\">Explore our activities<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"m5 12 14 0m-5-5 5 5-5 5\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></svg></button>",
-      "css": ".ds-button-primary{font-family:var(--font, Manrope, Arial, sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:13px 22px;border-radius:6px;font-weight:700;border:1px solid transparent;cursor:pointer;transition:color .18s,background .18s,box-shadow .18s;background:var(--blue,#0752d7);color:#fff;}.ds-button-primary:hover{background:#003ca4;}.ds-button-primary:focus-visible{outline:3px solid #d36b00;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition:none;}}"
+      "html": "<button class=\"ds-button-primary\">Explore our courses<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"m5 12 14 0m-5-5 5 5-5 5\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></svg></button>",
+      "css": ".ds-button-primary{font-family:var(--font, Manrope, Arial, sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:13px 22px;border-radius:6px;font-weight:700;border:1px solid transparent;cursor:pointer;transition:color .18s,background .18s,box-shadow .18s;background:var(--blue,#173f75);color:#fff;}.ds-button-primary:hover{background:#0b2850;}.ds-button-primary:focus-visible{outline:3px solid #d36b00;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition:none;}}"
     },
     {
       "name": "Outline Button",
@@ -216,7 +360,7 @@
       "refersTo": "button-outline",
       "description": "Observed outline action with arrow and hover/focus states.",
       "html": "<button class=\"ds-button-outline\">View photographed location<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"m5 12 14 0m-5-5 5 5-5 5\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></svg></button>",
-      "css": ".ds-button-outline{font-family:var(--font, Manrope, Arial, sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:13px 22px;border-radius:6px;font-weight:700;border:1px solid transparent;cursor:pointer;transition:color .18s,background .18s,box-shadow .18s;background:#fff;color:var(--blue,#0752d7);border-color:var(--blue,#0752d7);}.ds-button-outline:hover{background:var(--pale,#f0f5ff);}.ds-button-outline:focus-visible{outline:3px solid #d36b00;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-button-outline{transition:none;}}"
+      "css": ".ds-button-outline{font-family:var(--font, Manrope, Arial, sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:13px 22px;border-radius:6px;font-weight:700;border:1px solid transparent;cursor:pointer;transition:color .18s,background .18s,box-shadow .18s;background:#fff;color:var(--blue,#173f75);border-color:var(--blue,#173f75);}.ds-button-outline:hover{background:var(--pale,#f1f5fa);}.ds-button-outline:focus-visible{outline:3px solid #d36b00;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-button-outline{transition:none;}}"
     },
     {
       "name": "White Button",
@@ -224,7 +368,7 @@
       "refersTo": "button-white",
       "description": "Observed white action with arrow and hover/focus states.",
       "html": "<button class=\"ds-button-white\">Visit APK Infotech<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"m5 12 14 0m-5-5 5 5-5 5\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></svg></button>",
-      "css": ".ds-button-white{font-family:var(--font, Manrope, Arial, sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:13px 22px;border-radius:6px;font-weight:700;border:1px solid transparent;cursor:pointer;transition:color .18s,background .18s,box-shadow .18s;background:#fff;color:var(--blue,#0752d7);}.ds-button-white:hover{background:#e9f0ff;}.ds-button-white:focus-visible{outline:3px solid #d36b00;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-button-white{transition:none;}}"
+      "css": ".ds-button-white{font-family:var(--font, Manrope, Arial, sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:13px 22px;border-radius:6px;font-weight:700;border:1px solid transparent;cursor:pointer;transition:color .18s,background .18s,box-shadow .18s;background:#fff;color:var(--blue,#173f75);}.ds-button-white:hover{background:#e9f0ff;}.ds-button-white:focus-visible{outline:3px solid #d36b00;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-button-white{transition:none;}}"
     },
     {
       "name": "Category Filter",
@@ -232,7 +376,7 @@
       "refersTo": "category-filter",
       "description": "Selected and unselected accessible filter states; snippet is visual, application filtering lives in React.",
       "html": "<div class=\"ds-filters\" role=\"group\" aria-label=\"Filter activities by category\"><button aria-pressed=\"true\">All activities</button><button aria-pressed=\"false\">Workshops</button></div>",
-      "css": ".ds-filters{display:flex;flex-wrap:wrap;gap:7px}.ds-filters button{font-family:var(--font, Manrope, Arial, sans-serif);border:1px solid var(--line,#dce3ed);background:#fff;color:#4c5a70;border-radius:5px;padding:10px 14px;font-size:11px;font-weight:600;min-height:42px;cursor:pointer;transition:color .18s,background .18s,box-shadow .18s}.ds-filters button[aria-pressed=\"true\"]{background:var(--blue,#0752d7);border-color:var(--blue,#0752d7);color:#fff}.ds-filters button:hover:not([aria-pressed=\"true\"]){background:var(--pale,#f0f5ff);color:var(--blue,#0752d7)}.ds-filters button:focus-visible{outline:3px solid #d36b00;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-filters button{transition:none}}"
+      "css": ".ds-filters{display:flex;flex-wrap:wrap;gap:7px}.ds-filters button{font-family:var(--font, Manrope, Arial, sans-serif);border:1px solid var(--line,#dce3ed);background:#fff;color:#4c5a70;border-radius:5px;padding:10px 14px;font-size:11px;font-weight:600;min-height:42px;cursor:pointer;transition:color .18s,background .18s,box-shadow .18s}.ds-filters button[aria-pressed=\"true\"]{background:var(--blue,#173f75);border-color:var(--blue,#173f75);color:#fff}.ds-filters button:hover:not([aria-pressed=\"true\"]){background:var(--pale,#f1f5fa);color:var(--blue,#173f75)}.ds-filters button:focus-visible{outline:3px solid #d36b00;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-filters button{transition:none}}"
     },
     {
       "name": "Activity Search",
@@ -240,7 +384,7 @@
       "refersTo": "search",
       "description": "Native search field with container focus treatment.",
       "html": "<div class=\"ds-search\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\" stroke=\"currentColor\" stroke-width=\"1.7\"/><path d=\"m16 16 5 5\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\"/></svg><input type=\"search\" aria-label=\"Search our learning activities\" placeholder=\"Find an activity\"></div>",
-      "css": ".ds-search{display:flex;align-items:center;border:1px solid var(--line,#dce3ed);border-radius:5px;gap:9px;padding:0 11px;width:225px;height:42px;color:#64738a}.ds-search:focus-within{border-color:var(--blue,#0752d7)}.ds-search input{font-family:var(--font, Manrope, Arial, sans-serif);border:0;outline:none;width:100%;min-width:0;font-size:11px;background:transparent;color:var(--navy,#142747);caret-color:var(--blue,#0752d7)}.ds-search input::placeholder{color:#64738a}"
+      "css": ".ds-search{display:flex;align-items:center;border:1px solid var(--line,#dce3ed);border-radius:5px;gap:9px;padding:0 11px;width:225px;height:42px;color:#64738a}.ds-search:focus-within{border-color:var(--blue,#173f75)}.ds-search input{font-family:var(--font, Manrope, Arial, sans-serif);border:0;outline:none;width:100%;min-width:0;font-size:11px;background:transparent;color:var(--navy,#081d37);caret-color:var(--blue,#173f75)}.ds-search input::placeholder{color:#64738a}"
     },
     {
       "name": "Past Activity Badge",
@@ -256,22 +400,38 @@
       "refersTo": "activity-card",
       "description": "Observed card body and working native disclosure; archive photography is intentionally omitted from this compact snippet.",
       "html": "<article class=\"ds-card\"><div class=\"ds-card-body\"><span class=\"ds-tags\">DevOps \u00b7 Docker</span><h3>DevOps &amp; Docker workshop</h3><p>Getting hands-on with technical ideas, together.</p><details><summary>View activity <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"m5 12 14 0m-5-5 5 5-5 5\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></svg></summary><p>A two-day workshop captured in our activity archive.</p></details></div></article>",
-      "css": ".ds-card{font-family:var(--font, Manrope, Arial, sans-serif);color:var(--navy,#142747);border:1px solid var(--line,#dce3ed);border-radius:12px;overflow:hidden;background:#fff;transition:box-shadow .2s;max-width:300px}.ds-card:hover{box-shadow:0 8px 24px #14274712}.ds-card-body{padding:20px 18px 16px}.ds-tags{font-size:9px;color:#506787;display:block;margin-bottom:10px}.ds-card h3{margin:0;font-size:17px;font-weight:800;line-height:1.4;letter-spacing:-.025em}.ds-card p{margin:10px 0 0;font-size:12px;color:var(--muted,#556278);line-height:1.8}.ds-card details{border-top:1px solid #edf0f5;margin-top:20px;padding-top:14px}.ds-card summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700;color:var(--blue,#0752d7);min-height:25px;transition:color .18s,background .18s,box-shadow .18s}.ds-card summary::-webkit-details-marker{display:none}.ds-card details[open] summary svg{transform:rotate(90deg)}.ds-card summary:focus-visible{outline:3px solid #d36b00;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-card,.ds-card summary{transition:none}}"
+      "css": ".ds-card{font-family:var(--font, Manrope, Arial, sans-serif);color:var(--navy,#081d37);border:1px solid var(--line,#dce3ed);border-radius:12px;overflow:hidden;background:#fff;transition:box-shadow .2s;max-width:300px}.ds-card:hover{box-shadow:0 8px 24px #14274712}.ds-card-body{padding:20px 18px 16px}.ds-tags{font-size:9px;color:#506787;display:block;margin-bottom:10px}.ds-card h3{margin:0;font-size:17px;font-weight:800;line-height:1.4;letter-spacing:-.025em}.ds-card p{margin:10px 0 0;font-size:12px;color:var(--muted,#536078);line-height:1.8}.ds-card details{border-top:1px solid #edf0f5;margin-top:20px;padding-top:14px}.ds-card summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700;color:var(--blue,#173f75);min-height:25px;transition:color .18s,background .18s,box-shadow .18s}.ds-card summary::-webkit-details-marker{display:none}.ds-card details[open] summary svg{transform:rotate(90deg)}.ds-card summary:focus-visible{outline:3px solid #d36b00;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-card,.ds-card summary{transition:none}}"
     },
     {
       "name": "Main Navigation",
       "kind": "nav",
       "refersTo": "main-navigation",
       "description": "Desktop navigation styling; mobile open/close behavior is documented in DESIGN.md and implemented in Navigation.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#activities\">Our activities</a><a href=\"#story\">Our story</a><a href=\"#gallery\">Gallery</a><a class=\"ds-nav-action\" href=\"https://apkinfotech.in/\">Connect with us</a></nav>",
-      "css": ".ds-nav{font-family:var(--font, Manrope, Arial, sans-serif);display:flex;align-items:center;gap:29px;font-size:13px;font-weight:600;color:var(--navy,#142747);background:#fff}.ds-nav a{color:inherit;text-decoration:none;transition:color .18s,background .18s,box-shadow .18s}.ds-nav>a:hover{color:var(--blue,#0752d7)}.ds-nav .ds-nav-action{margin-left:11px;display:inline-flex;align-items:center;justify-content:center;color:#fff;background:var(--blue,#0752d7);font-size:12px;font-weight:700;min-height:44px;padding:10px 17px;border:1px solid transparent;border-radius:6px}.ds-nav .ds-nav-action:hover{color:#fff;background:#003ca4}.ds-nav a:focus-visible{outline:3px solid #d36b00;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-nav a{transition:none}}"
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#courses\">Courses</a><a href=\"#story\">Our story</a><a href=\"#gallery\">Gallery</a><a class=\"ds-nav-action\" href=\"https://apkinfotech.in/\">Register interest</a></nav>",
+      "css": ".ds-nav{font-family:var(--font, Manrope, Arial, sans-serif);display:flex;align-items:center;gap:23px;font-size:13px;font-weight:600;color:var(--navy,#081d37);background:#fff}.ds-nav a{color:inherit;text-decoration:none;transition:color .18s,background .18s,box-shadow .18s}.ds-nav>a:hover{color:var(--blue,#173f75)}.ds-nav .ds-nav-action{margin-left:11px;display:inline-flex;align-items:center;justify-content:center;color:#fff;background:var(--blue,#173f75);font-size:12px;font-weight:700;min-height:44px;padding:10px 17px;border:1px solid transparent;border-radius:6px}.ds-nav .ds-nav-action:hover{color:#fff;background:#0b2850}.ds-nav a:focus-visible{outline:3px solid #d36b00;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-nav a{transition:none}}"
+    },
+    {
+      "name": "Topic Tag",
+      "kind": "chip",
+      "refersTo": "topic-tag",
+      "description": "Neutral programme topic label.",
+      "html": "<span class=\"ds-topic\">React</span>",
+      "css": ".ds-topic{font-family:var(--font,Manrope,Arial,sans-serif);font-size:9px;color:#51617a;background:#f4f6fa;padding:3px 7px;border-radius:3px;white-space:nowrap}"
+    },
+    {
+      "name": "Programme Overview",
+      "kind": "card",
+      "refersTo": "course-card",
+      "description": "Course body with a native programme disclosure; no hover shadow.",
+      "html": "<article class=\"ds-course\"><h3>Full Stack Web Development</h3><p>Build for the web, from interface to database.</p><details><summary>Programme overview <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg></summary><p>Learn the MERN stack with React, Node.js, MongoDB, and Express through real-world projects.</p></details></article>",
+      "css": ".ds-course{font-family:var(--font,Manrope,Arial,sans-serif);color:var(--navy,#081d37);border:1px solid var(--line,#dce3ed);border-radius:12px;background:white;padding:21px 18px 18px;max-width:300px}.ds-course h3{margin:0;font-size:17px;line-height:1.4;letter-spacing:-.02em;font-weight:800}.ds-course p{font-size:12px;color:var(--muted,#536078);margin-top:12px;line-height:1.8}.ds-course details{border-top:1px solid var(--line,#dce3ed);margin-top:16px;padding-top:14px}.ds-course summary{font-size:11px;list-style:none;display:flex;justify-content:space-between;align-items:center;cursor:pointer;min-height:30px;font-weight:600;transition:color .18s,background .18s,box-shadow .18s}.ds-course summary::-webkit-details-marker{display:none}.ds-course details[open] summary svg{transform:rotate(180deg)}.ds-course summary:focus-visible{outline:3px solid #d36b00;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-course summary{transition:none}}"
     }
   ],
   "narrative": {
     "northStar": "Learning in good company",
-    "overview": "The approved Coursera-inspired direction uses confident blue actions, navy typography, spacious white surfaces, and real photographs from APK\u2019s supplied activity archive. Manrope keeps headings, navigation, and compact card metadata in one coherent voice.\n\nPhotographs provide the human character; restrained borders and pale blue sections organize the experience. The current implementation documents past workshops, internships, project reviews, and college engagement. Preserve that evidence boundary when extending its visual language.",
+    "overview": "The approved identity now uses APK Infotech\u2019s official full navy-and-gold logo, navy actions, gold heading emphasis, white surfaces, and real photographs from the supplied activity archive. Self-hosted Manrope unifies programme discovery with the existing human, practical-learning photography.\n\nKeep the official identity intact. Course names, registration, and contact details are sourced from the official website and recorded in `docs/official-site-sources.json`; archive photographs still describe past activities. Course-specific pastel icon panels distinguish subjects without replacing the navy-and-gold brand.",
     "keyCharacteristics": [
-      "Blue calls to action and clear navy headings.",
+      "Official navy-and-gold identity, navy calls to action, and gold hero emphasis.",
       "Real activity photography with meaningful captions.",
       "Rounded, bordered controls and cards with restrained depth.",
       "Responsive grids, native disclosure, and visible keyboard focus."
@@ -279,19 +439,19 @@
     "rules": [
       {
         "name": "The Evidence Rule",
-        "body": "Photography and labels must describe the supplied past activities without implying a current offer or verified current venue.",
+        "body": "Photography and labels must describe the supplied past activities without implying current class availability or a photograph of the current office.",
         "section": "colors"
       }
     ],
     "dos": [
-      "Do use blue for primary actions, selected filters, and key text accents.",
+      "Do use navy for primary actions and selected filters, gold for hero emphasis, and the full official logo unchanged.",
       "Do preserve supplied photography, useful alt text, and explicit past-activity labels.",
       "Do keep the native disclosure, filter announcements, mobile menu semantics, and reduced-motion behavior.",
       "Do ground new factual content in client-approved evidence."
     ],
     "donts": [
-      "Don't infer a current course catalogue, prices, placement outcomes, accreditation, or testimonials from archive photos.",
-      "Don't present the photographed venue as a verified current branch.",
+      "Don't infer fees, batches, duration, placement guarantees, ratings, or accreditation from archive photographs or programme listings.",
+      "Don't present archive photography as a photograph of the verified current office; use sourced official contact details.",
       "Don't add accounts, payments, enrolment, or LMS screens solely because Coursera is a visual reference.",
       "Don't replace the self-hosted Manrope family or introduce unrelated decorative palettes without an approved design change."
     ]

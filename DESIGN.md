@@ -1,26 +1,42 @@
 ---
 name: APK Infotech
-description: Clear blue and white learning experiences, grounded in real photography.
+description: Official navy and gold identity, programme discovery, and real learning experiences.
 colors:
-  blue: "#0752d7"
-  navy: "#142747"
-  muted: "#556278"
-  pale: "#f0f5ff"
+  gold: "#956811"
+  closing-bg: "#071d39"
+  logo-bg: "#031228"
+  course-code-bg: "#edf2fa"
+  course-ai-bg: "#edeefa"
+  course-ai-ink: "#5b4692"
+  course-hardware-bg: "#f7f0e0"
+  course-hardware-ink: "#805b18"
+  course-security-bg: "#e9f4f0"
+  course-security-ink: "#24644f"
+  course-career-bg: "#f7ebea"
+  course-career-ink: "#8b4146"
+  topic-bg: "#f4f6fa"
+  topic-ink: "#51617a"
+  contact-line: "#35516f"
+  contact-label: "#cfdbeb"
+  blue: "#173f75"
+  navy: "#081d37"
+  muted: "#536078"
+  pale: "#f1f5fa"
   line: "#dce3ed"
   white: "#fff"
-  blue-hover: "#003ca4"
+  blue-hover: "#0b2850"
   white-hover: "#e9f0ff"
   selection: "#bcd4ff"
   focus: "#d36b00"
   scrollbar: "#9eadc2"
-  announcement-bg: "#edf3ff"
-  announcement-text: "#24426f"
-  announcement-link: "#064ac5"
+  announcement-bg: "#f8f3e8"
+  announcement-text: "#70511d"
+  announcement-link: "#72510c"
   header-line: "#e8edf4"
   check-bg: "#e3f1ed"
   check-text: "#197158"
   photo-bg: "#e8eef7"
-  strip-bg: "#f7f9fc"
+  strip-bg: "#faf8f3"
   strip-line: "#e9edf3"
   strip-text: "#46566f"
   filter-text: "#4c5a70"
@@ -59,6 +75,86 @@ typography:
     fontFamily: "Manrope, Arial, sans-serif"
     fontSize: "11px"
     fontWeight: 600
+  wordmark-mobile:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "7px"
+    fontWeight: 600
+  wordmark-caption:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "8px"
+    fontWeight: 600
+  metadata:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "9px"
+    fontWeight: 600
+  compact-label:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "10px"
+    fontWeight: 600
+  support-copy:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "12px"
+    fontWeight: 400
+  navigation:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "13px"
+    fontWeight: 600
+  intro-mobile:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
+  intro:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "16px"
+    fontWeight: 400
+  wordmark:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "19px"
+    fontWeight: 800
+  course-title-narrow:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "20px"
+    fontWeight: 800
+  gallery-title-mobile:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "23px"
+    fontWeight: 700
+  faq-headline-mobile:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "27px"
+    fontWeight: 800
+  closing-headline-mobile:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "28px"
+    fontWeight: 800
+  headline-mobile:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "29px"
+    fontWeight: 800
+  story-and-faq-headline:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "30px"
+    fontWeight: 800
+  closing-headline:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "33px"
+    fontWeight: 800
+  story-headline:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "37px"
+    fontWeight: 800
+  display-narrow:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "38px"
+    fontWeight: 800
+  display-mobile:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "43px"
+    fontWeight: 800
+  display-compact:
+    fontFamily: "Manrope, Arial, sans-serif"
+    fontSize: "47px"
+    fontWeight: 800
 rounded:
   badge: "3px"
   control: "5px"
@@ -66,7 +162,8 @@ rounded:
   symbol: "9px"
   floating-label: "10px"
   card: "12px"
-  hero-photo: "16px"
+  hero-photo: "12px"
+  official-logo: "4px"
   circle: "50%"
 spacing:
   compact: "10px"
@@ -115,6 +212,14 @@ components:
   main-navigation:
     backgroundColor: "{colors.white}"
     textColor: "{colors.navy}"
+  course-card:
+    backgroundColor: "{colors.white}"
+    rounded: "{rounded.card}"
+  topic-tag:
+    backgroundColor: "{colors.topic-bg}"
+    textColor: "{colors.topic-ink}"
+    rounded: "{rounded.badge}"
+    padding: "3px 7px"
   activity-card:
     backgroundColor: "{colors.white}"
     rounded: "{rounded.card}"
@@ -131,24 +236,28 @@ components:
 
 **Creative North Star: "Learning in good company"**
 
-The approved Coursera-inspired direction uses confident blue actions, navy typography, spacious white surfaces, and real photographs from APK’s supplied activity archive. Manrope keeps headings, navigation, and compact card metadata in one coherent voice.
+The approved identity now uses APK Infotech’s official full navy-and-gold logo, navy actions, gold heading emphasis, white surfaces, and real photographs from the supplied activity archive. Self-hosted Manrope unifies programme discovery with the existing human, practical-learning photography.
 
-Photographs provide the human character; restrained borders and pale blue sections organize the experience. The current implementation documents past workshops, internships, project reviews, and college engagement. Preserve that evidence boundary when extending its visual language.
+Keep the official identity intact. Course names, registration, and contact details are sourced from the official website and recorded in `docs/official-site-sources.json`; archive photographs still describe past activities. Course-specific pastel icon panels distinguish subjects without replacing the navy-and-gold brand.
 
 **Key Characteristics:**
-- Blue calls to action and clear navy headings.
+- Official navy-and-gold identity, navy calls to action, and gold hero emphasis.
 - Real activity photography with meaningful captions.
 - Rounded, bordered controls and cards with restrained depth.
 - Responsive grids, native disclosure, and visible keyboard focus.
 
 ## Colors
 
-The primary accent is a clear, saturated blue against white and cool neutrals. Frontmatter preserves the exact source values, including supporting colors already used in the page.
+The primary accent is official navy blue, paired with restrained gold against white and cool neutrals. Frontmatter preserves the exact source values, including supporting colors already used in the page.
 
 ### Primary
-- **Learning Blue** (`blue`): primary buttons, selected categories, heading emphasis, icons, text links, and the closing banner.
-- **Deep Action Blue** (`blue-hover`): primary action hover state.
-- **Pale Learning Blue** (`pale`): story section, empty results, and secondary-control hover.
+- **Official Navy Blue** (`blue`): primary buttons, selected categories, icons, and text links.
+- **Deep Navy Action** (`blue-hover`): primary action hover state.
+- **Pale Cool Surface** (`pale`): empty results, location caption surface, and secondary-control hover. The story retains its observed local #f0f5ff fill.
+
+### Secondary
+- **Official Gold** (`gold`): restrained hero heading emphasis.
+- **Course tints:** blue, lavender, gold, green, and rose icon panels mark subjects; topic chips use a neutral tint.
 
 ### Neutral
 - **Ink Navy** (`navy`): body text and headings.
@@ -157,7 +266,7 @@ The primary accent is a clear, saturated blue against white and cool neutrals. F
 - **Cool Divider** (`line`): cards, filters, search, footer, and archive label borders.
 - The remaining frontmatter colors are observed local treatments for announcement, photo fallback, captions, small check icon, selection, and focus. They are supporting treatments rather than additional brand accents.
 
-**The Evidence Rule.** Photography and labels must describe the supplied past activities without implying a current offer or verified current venue.
+**The Evidence Rule.** Photography and labels must describe the supplied past activities without implying current class availability or a photograph of the current office.
 
 ## Typography
 
@@ -166,10 +275,10 @@ The primary accent is a clear, saturated blue against white and cool neutrals. F
 The single geometric sans family combines bold, tightly tracked headings with small, calm labels. The implementation uses contextual sizes rather than a uniform mathematical type scale.
 
 - **Display:** frontmatter `display`; hero heading, capped at 610px. CSS overrides to 47px at ≤1100px, 43px at ≤760px, and 38px at ≤420px.
-- **Headline:** frontmatter `headline`; section headings. Story uses 37px and closing 33px; at ≤760px standard headings and closing use 29px, story uses 30px.
+- **Headline:** frontmatter `headline`; section headings. Story uses 37px and closing 33px; at ≤760px standard headings use 29px, closing uses 28px, story uses 30px, and FAQ uses 27px. FAQ desktop uses 30px.
 - **Title:** frontmatter `title`; activity-card heading. At ≤760px it uses 15px; at ≤420px it uses 19px.
 - **Body:** frontmatter `body`; global default. Hero copy uses 16px/1.85 with a 480px maximum width, then 14px/1.9 on mobile. Supporting copy commonly uses 12–14px.
-- **Label:** frontmatter `label`; category controls. Tags and image badges use 9px; disclosure uses 11px/700. Main navigation uses 13px/600. Preserve each component's context rather than enlarging all labels to body size.
+- **Label:** frontmatter `label`; category controls. Tags and image badges use 9px; disclosure uses 11px/700. Main navigation uses 13px/600. The official wordmark uses 19px/800 (16px at ≤1100px); its tracked caption uses 8px/600 (7px on mobile). Course titles use 17px/800, 16px on mobile, and 20px at ≤420px. Frontmatter includes these intentionally used contextual sizes; preserve their component roles rather than forcing a smaller uniform ramp.
 
 ## Layout
 
@@ -195,13 +304,13 @@ At widths ≥1000px the hero photo arrives over 0.75s with `cubic-bezier(0.16, 1
 
 ## Shapes
 
-Use compact rounded rectangles: controls have 5px corners, buttons 6px, cards and gallery/location/story photo frames 12px, and the main hero photo 16px. The floating hero label uses 10px; the brand symbol and learning icon use 9px. Badges use 3px corners. Small checks and story-list dots are circular. Photograph frames clip their contents; cards use a fine border rather than a heavy stroke.
+Use compact rounded rectangles: controls have 5px corners, buttons 6px, cards and gallery/location/story photo frames 12px, and the main hero photo 12px. The floating hero label uses 10px; the learning icon uses 9px; the official logo image has 4px corners. Badges use 3px corners. Small checks and story-list dots are circular. Photograph frames clip their contents; cards use a fine border rather than a heavy stroke.
 
 ## Components
 
 ### Buttons and text links
 
-Confident, compact actions pair bold labels with simple inline arrow SVGs. Standard buttons use 13px 22px padding, a minimum 48px height, 14px icon gap, 700 weight, and 6px corners. Primary is blue/white with deep-blue hover; outline is white/blue with blue border and pale hover; white is white/blue with a subtly blue-tinted hover. Navigation and location actions use a 44px minimum. Text links are blue, weight 700, and underline on hover with a 5px offset.
+Confident, compact navy actions pair bold labels with simple inline arrow SVGs. Standard buttons use 13px 22px padding, a minimum 48px height, 14px icon gap, 700 weight, and 6px corners. Primary is navy/white with deep-navy hover; outline is white/blue with blue border and pale hover; white is white/blue with a subtly blue-tinted hover. Navigation and location actions use a 44px minimum. Text links are blue, weight 700, and underline on hover with a 5px offset.
 
 Global keyboard focus uses a 3px solid orange outline with 5px offset. The search input intentionally uses its container's blue `:focus-within` border instead of this outline. There is no implemented disabled, error, or active-press style to reproduce.
 
@@ -217,9 +326,19 @@ Cards use white fill, a cool 1px border, 12px corners, and 20px 18px 16px body p
 
 A native `details`/`summary` row opens additional archive context inline. Its top divider is subtle, its summary is blue and keyboard focusable, and its arrow rotates 90 degrees when open. Preserve native disclosure semantics rather than replacing it with a modal or implied enrolment action.
 
+### Courses
+
+Course cards use white fill, a 1px divider-colored border, 12px corners, 125px tinted icon panels, and 21px 18px 18px body padding. Subject SVGs are 47px; topic tags use 3px corners and 3px 7px padding. Four featured programmes appear initially; the accessible expand button exposes all seven and can restore the featured view. Category and case-insensitive trimmed search intersect across title, category, description, and topics. Filtering shows every match regardless of featured mode; the visible/total status is announced. Reset clears query/category and restores featured mode. A no-results panel provides that reset.
+
+Programme overview uses native details; its chevron rotates 180 degrees when open. Register interest links to the official registration form in a new tab. Cards have no hover elevation. Course search becomes full-width below filters at ≤1100px. The grid follows four/two/one columns at the same 1100px/420px boundaries as activities. Mobile panels use 108px height and 36px icons; at ≤420px panels use 100px height and titles use 20px.
+
+### FAQ and contact
+
+FAQ uses native disclosures with a visible browser marker, 1px bottom dividers, and 19px vertical padding. Its desktop grid is 0.85fr 1.15fr with a 70px gap, reduced to 40px at ≤1100px; at ≤760px it stacks with a 20px gap. The closing contact surface uses deep navy #071d39 with white actions and three contact columns (`1fr 1fr 1.3fr`), stacking at ≤760px. Phone and email links remain direct native actions; WhatsApp and registration are external links. Contact labels use pale text and a #35516f divider.
+
 ### Navigation
 
-The white header remains sticky above the content, with a fine bottom border and navy links. Link hover changes to blue. At ≤760px a 44px menu button exposes `aria-expanded`/`aria-controls` and swaps its icon from three lines to a cross. The dropdown appears directly below the header as a vertical white panel; choosing any link closes it. No route-active style or modal focus trap is implemented. The site includes a keyboard-visible skip link.
+Header and footer use the full official logo asset with the separate APK INFOTECH / IT SOLUTIONS PVT LTD wordmark. The logo is proportionally contained in 65px × 52px, reducing to 58px × 47px at ≤1100px and 55px × 44px at ≤760px; do not redraw, crop, or recolor it. The white header remains sticky above the content, with a fine bottom border and navy links. Link hover changes to blue. At ≤760px a 44px menu button exposes `aria-expanded`/`aria-controls` and swaps its icon from three lines to a cross. The dropdown appears directly below the header as a vertical white panel; choosing any link closes it. No route-active style or modal focus trap is implemented. The site includes a keyboard-visible skip link.
 
 ### Photograph frames and captions
 

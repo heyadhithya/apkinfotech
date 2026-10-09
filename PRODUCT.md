@@ -31,7 +31,7 @@ Undecided. No differentiating client claims have been supplied.
 
 Repository: https://github.com/heyadhithya/apkinfotech.
 Development should work through Codex Cloud using repository-local skills.
-The client website reference is https://apkinfotech.in/. Direct access from this environment returned a proxy 403, so its content has not been verified.
+The client website reference is https://apkinfotech.in/. Access is now available; official courses, branding, contact details, and office address were verified on 2026-10-09 and recorded in docs/official-site-sources.json.
 
 ## Capabilities and Constraints
 
@@ -41,8 +41,9 @@ data handling are undecided. Do not add them simply because Coursera has them.
 
 ## Brand Commitments
 
-Project name: APK Infotech. Exact client spelling, identity, assets, and visual
-direction need confirmation before public-facing design.
+Project name: APK Infotech. The official navy-and-gold logo and company name were retrieved from
+https://apkinfotech.in/ on 2026-10-09. Use the genuine logo rather than a
+generated mark. Preserve clear Coursera-inspired programme discovery.
 
 ## Evidence on Hand
 
@@ -52,8 +53,10 @@ clarified that it documents past activities: workshops, internships, project
 reviews, and college engagement. Selected photo sources are recorded in
 docs/photo-sources.json. A GPS overlay identifies a photographed venue in
 Mannivakkam, Tamil Nadu; it does not verify a current branch.
-No current course catalogue, pricing, official logo, placement statistics,
-testimonials, accreditations, or approved contact details have been supplied.
+The official course catalogue contains seven programmes; verified titles and
+contacts are recorded in docs/official-site-sources.json. Pricing, batch dates,
+duration, entry requirements, placement outcomes, testimonials, and
+accreditation claims remain unverified and must not be invented.
 Require client-approved evidence before publishing factual claims.
 
 ## Product Principles

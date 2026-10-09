@@ -1,18 +1,13 @@
 "use client";
 import { useState } from "react";
+import Brand from "./brand";
+import { registrationUrl } from "./course-data";
 export default function Navigation() {
   const [open, setOpen] = useState(false);
   return (
     <header className="header">
       <div className="wrap nav-inner">
-        <a className="brand" href="#main" aria-label="APK Infotech home">
-          <span className="brand-symbol" aria-hidden="true">
-            a
-          </span>
-          <span>
-            APK<span className="brand-light">infotech</span>
-          </span>
-        </a>
+        <Brand />
         <button
           className="menu-toggle"
           aria-label={open ? "Close navigation" : "Open navigation"}
@@ -40,8 +35,8 @@ export default function Navigation() {
           className={open ? "main-nav is-open" : "main-nav"}
           aria-label="Main navigation"
         >
-          <a href="#activities" onClick={() => setOpen(false)}>
-            Our activities
+          <a href="#courses" onClick={() => setOpen(false)}>
+            Courses
           </a>
           <a href="#story" onClick={() => setOpen(false)}>
             Our story
@@ -52,14 +47,17 @@ export default function Navigation() {
           <a href="#location" onClick={() => setOpen(false)}>
             Location
           </a>
+          <a href="#contact" onClick={() => setOpen(false)}>
+            Contact
+          </a>
           <a
             className="button nav-button"
-            href="https://apkinfotech.in/"
+            href={registrationUrl}
             target="_blank"
             rel="noreferrer"
             onClick={() => setOpen(false)}
           >
-            Connect with us{" "}
+            Register interest{" "}
             <svg
               width="17"
               height="17"

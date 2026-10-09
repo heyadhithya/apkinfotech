@@ -1,0 +1,36 @@
+{
+  "verified_on": "2026-10-09",
+  "homepage": "https://apkinfotech.in/",
+  "course_catalogue": "https://apkinfotech.in/course.html",
+  "logo": {
+    "source": "First embedded JPEG img, alt APK INFOTECH, in official homepage",
+    "local_file": "public/images/apk-official-logo.webp",
+    "treatment": "Full image retained, resized proportionally and WebP encoded; no redrawing or recoloring"
+  },
+  "courses": [
+    "Full Stack Web Development",
+    "Agentic AI with Gen AI",
+    "VLSI Design",
+    "Cyber Security",
+    "Robotics and PCB Design",
+    "Placement Readiness Program",
+    "Graduate Engineering Training (GET)"
+  ],
+  "office": "No. 65, 5th Street, Ram Nagar, Mannivakkam, Chennai, Tamil Nadu 600048",
+  "phone": [
+    "+91 89394 10255",
+    "+91 63812 72033"
+  ],
+  "email": "official@apkinfotech.in",
+  "registration": "https://docs.google.com/forms/d/e/1FAIpQLSeBUYiR5NKgq5vfsCip66shEFdUvE-uxSR1o5Jouf9WKkVRsw/viewform",
+  "whatsapp": "https://wa.me/918939410255",
+  "content_notes": [
+    "Archive photos represent past activities, not current courses or office photographs.",
+    "Do not reproduce unverified client-count, success-rate, placement guarantees, ratings or accreditation claims.",
+    "Current fees, batches, duration and entry requirements are not verified; direct visitors to the team."
+  ],
+  "source_sha256": {
+    "homepage": "165d301aa15123f248c956cca61663164671c2802c47294c91cfba20f4480eb2",
+    "course_catalogue": "c8dba359f6d8a4eb652ddd05e3273f6a9a57fe85d222ad3040bb5b5cdfdf55a9"
+  }
+}

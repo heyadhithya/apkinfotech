@@ -1,6 +1,9 @@
 import Image from "next/image";
 import ActivityExplorer from "./activity-explorer";
 import Navigation from "./navigation";
+import Brand from "./brand";
+import CourseExplorer from "./course-explorer";
+import { registrationUrl } from "./course-data";
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return (
@@ -29,9 +32,9 @@ export default function Home() {
         Skip to content
       </a>
       <div className="announcement">
-        Learning happens when you get involved.{" "}
-        <a href="#activities">
-          See what we&apos;ve been building <Arrow />
+        Your next step starts with the right skills.{" "}
+        <a href="#courses">
+          Explore our programmes <Arrow />
         </a>
       </div>
       <Navigation />
@@ -39,19 +42,19 @@ export default function Home() {
         <section className="hero wrap">
           <div className="hero-copy">
             <h1>
-              Your next chapter starts with <span>hands-on learning.</span>
+              Learn the skills. <span>Build your next chapter.</span>
             </h1>
             <p>
-              From the classroom to real projects. Explore how we bring learners
-              together through technical workshops, internships, and practical
-              experience.
+              Explore programmes in software development, AI, hardware, and
+              career readiness. Learn with APK Infotech—and see the real
+              experiences behind our learning community.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="#activities">
-                Explore our activities <Arrow />
+              <a className="button primary" href="#courses">
+                Explore courses <Arrow />
               </a>
-              <a className="text-link" href="#story">
-                Get to know APK <Arrow diagonal />
+              <a className="text-link" href="#contact">
+                Talk to our team <Arrow diagonal />
               </a>
             </div>
             <div className="hero-note">
@@ -116,16 +119,28 @@ export default function Home() {
               <br />
               <strong>A lot of possibilities.</strong>
             </p>
-            <span>Technical workshops</span>
-            <span>Internship experiences</span>
-            <span>Project reviews</span>
-            <span>College engagement</span>
+            <span>Software development</span>
+            <span>AI &amp; machine learning</span>
+            <span>Hardware &amp; robotics</span>
+            <span>Career readiness</span>
           </div>
         </div>
+        <section id="courses" className="wrap section courses-section">
+          <div className="section-heading">
+            <div>
+              <h2>A new skill. A new possibility.</h2>
+              <p>Find a programme that fits where you want to go next.</p>
+            </div>
+            <a className="text-link" href="#contact">
+              Need help choosing? <Arrow />
+            </a>
+          </div>
+          <CourseExplorer />
+        </section>
         <section id="activities" className="activities-section wrap section">
           <div className="section-heading">
             <div>
-              <h2>Find your spark.</h2>
+              <h2>Learning in action.</h2>
               <p>
                 Discover the experiences that have brought our learners
                 together.
@@ -248,10 +263,10 @@ export default function Home() {
         </section>
         <section id="location" className="location-section wrap">
           <div className="location-copy">
-            <h2>Learning, a little closer to home.</h2>
+            <h2>Let’s talk about your next step.</h2>
             <p>
-              Our activity photos capture a learning venue in Mannivakkam, Tamil
-              Nadu. Take a look at the location behind these classroom moments.
+              Visit our Mannivakkam office to discuss courses, internships, and
+              career preparation with the APK Infotech team.
             </p>
             <div className="address">
               <svg
@@ -275,78 +290,125 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <strong>Mannivakkam, Tamil Nadu</strong>
+                <strong>Mannivakkam, Chennai</strong>
                 <p>
-                  6/185a, Maneswarar Nagar
+                  No. 65, 5th Street, Ram Nagar
                   <br />
-                  Mannivakkam, Tamil Nadu 600048
+                  Mannivakkam, Chennai, Tamil Nadu 600048
                 </p>
               </div>
             </div>
             <a
               className="button outline"
-              href="https://www.google.com/maps/search/?api=1&query=12.892882%2C80.064307"
+              href="https://maps.google.com/?q=65,+5th+Street,+Ram+Nagar,+Manivakkam,+Chennai,+Tamil+Nadu+600048"
               target="_blank"
               rel="noreferrer"
             >
-              View photographed location <Arrow diagonal />
+              Get directions <Arrow diagonal />
             </a>
             <small>
-              Location shown in the supplied photos. Please confirm the current
-              venue before visiting.
+              Call ahead to confirm visiting hours:{" "}
+              <a href="tel:+918939410255">+91 89394 10255</a>.
             </small>
           </div>
           <div className="location-photo">
             <Image
               src="/images/project-review.webp"
-              alt="Learners gathered during a project review and internship event"
+              alt="Participants at a past APK Infotech project review event"
               width={1280}
               height={960}
               sizes="(max-width: 760px) 100vw, 45vw"
             />
             <div>
-              <span>A place for curiosity.</span>
-              <strong>And the people who bring it.</strong>
+              <span>Past project review event.</span>
+              <strong>Meet the people behind the programmes.</strong>
             </div>
           </div>
         </section>
-        <section className="closing">
+        <section className="faq-section wrap">
+          <div>
+            <h2>A little clarity before you begin.</h2>
+            <p>Ready to take the next step? We’re here to help.</p>
+          </div>
+          <div className="faq-list">
+            <details>
+              <summary>How do I register for a programme?</summary>
+              <p>
+                Use APK Infotech’s{" "}
+                <a href={registrationUrl} target="_blank" rel="noreferrer">
+                  official registration form
+                </a>{" "}
+                to register your interest. Contact the team to confirm the next
+                available batch.
+              </p>
+            </details>
+            <details>
+              <summary>Where can I find fees and schedules?</summary>
+              <p>
+                Call <a href="tel:+918939410255">+91 89394 10255</a> or{" "}
+                <a href="mailto:official@apkinfotech.in">email the team</a> for
+                the latest fees, duration, schedules, and entry requirements.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Can I ask about internships and placement preparation?
+              </summary>
+              <p>
+                Yes. APK Infotech’s official website lists internships and
+                placement support. Contact the team to discuss current
+                availability and what support is included.
+              </p>
+            </details>
+          </div>
+        </section>
+        <section id="contact" className="closing">
           <div className="wrap closing-inner">
             <div>
-              <h2>What will you learn next?</h2>
-              <p>
-                Start a conversation about your next step with APK Infotech.
-              </p>
+              <h2>Your next chapter starts with a conversation.</h2>
+              <p>Let’s find the right programme for you.</p>
             </div>
             <a
               className="button white"
-              href="https://apkinfotech.in/"
+              href="https://wa.me/918939410255"
               target="_blank"
               rel="noreferrer"
             >
-              Visit APK Infotech <Arrow diagonal />
+              Chat with our team <Arrow diagonal />
+            </a>
+          </div>
+          <div className="wrap contact-options">
+            <a href="tel:+918939410255">
+              <span>Call us</span>
+              <strong>+91 89394 10255</strong>
+            </a>
+            <a href="tel:+916381272033">
+              <span>Speak to the team</span>
+              <strong>+91 63812 72033</strong>
+            </a>
+            <a href="mailto:official@apkinfotech.in">
+              <span>Email us</span>
+              <strong>official@apkinfotech.in</strong>
             </a>
           </div>
         </section>
       </main>
       <footer className="wrap footer">
-        <a className="brand" href="#main">
-          <span className="brand-symbol" aria-hidden="true">
-            a
-          </span>
-          <span>
-            APK<span className="brand-light">infotech</span>
-          </span>
-        </a>
-        <p>Curiosity today. Possibilities tomorrow.</p>
+        <Brand />
+        <p>Skills for your career. Solutions for your business.</p>
         <nav aria-label="Footer navigation">
-          <a href="#activities">Our activities</a>
+          <a href="#courses">Courses</a>
           <a href="#gallery">Gallery</a>
-          <a href="#location">Location</a>
+          <a href="#location">Visit us</a>
+          <a href="#contact">Contact</a>
         </nav>
         <div className="footer-bottom">
-          <span>APK Infotech · Learning in good company.</span>
-          <span>Built around real moments.</span>
+          <span>
+            © {new Date().getFullYear()} APK Infotech IT Solutions Pvt Ltd.
+          </span>
+          <a href="https://apkinfotech.in/" target="_blank" rel="noreferrer">
+            Official website <Arrow diagonal />
+          </a>
         </div>
       </footer>
     </>
