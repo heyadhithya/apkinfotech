@@ -31,7 +31,7 @@ Undecided. No differentiating client claims have been supplied.
 
 Repository: https://github.com/heyadhithya/apkinfotech.
 Development should work through Codex Cloud using repository-local skills.
-The client's existing website URL and source files have not been supplied.
+The client website reference is https://apkinfotech.in/. Direct access from this environment returned a proxy 403, so its content has not been verified.
 
 ## Capabilities and Constraints
 
@@ -47,7 +47,12 @@ direction need confirmation before public-facing design.
 ## Evidence on Hand
 
 Source: the user's project description in the setup conversation, 2026-10-09.
-No course catalogue, pricing, logo, photographs, placement statistics,
+The user supplied masterdata.zip containing 80 photos and two videos, and
+clarified that it documents past activities: workshops, internships, project
+reviews, and college engagement. Selected photo sources are recorded in
+docs/photo-sources.json. A GPS overlay identifies a photographed venue in
+Mannivakkam, Tamil Nadu; it does not verify a current branch.
+No current course catalogue, pricing, official logo, placement statistics,
 testimonials, accreditations, or approved contact details have been supplied.
 Require client-approved evidence before publishing factual claims.
 

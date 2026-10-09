@@ -14,8 +14,14 @@ for (let attempt = 0; attempt < 30; attempt += 1) {
 }
 assert.equal(response.status, 200);
 const html = await response.text();
-assert.match(html, /<main>/);
-assert.match(html, /<h1>APK Infotech<\/h1>/);
-assert.match(html, /Website in development\./);
+assert.match(html, /<main id="main">/);
+assert.match(html, /Your next chapter starts with/);
+assert.match(html, /From our activity archive/);
+assert.match(html, /Mannivakkam, Tamil Nadu/);
+assert.match(html, /DevOps &amp; Docker workshop/);
+assert.match(html, /These are highlights of past activities/);
+assert.match(html, /www.google.com\/maps\/search/);
 assert.match(html, /name="robots" content="noindex, nofollow"/);
-console.log(`Smoke OK: ${url}, HTTP 200, starter content and noindex metadata.`);
+console.log(
+  `Smoke OK: ${url}, HTTP 200, landing page content and noindex metadata.`,
+);

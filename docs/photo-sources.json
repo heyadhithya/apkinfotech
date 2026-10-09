@@ -1,0 +1,32 @@
+{
+  "learners.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "project review and internship and certification/WhatsApp Image 2026-10-09 at 9.22.22 AM.jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content"
+  },
+  "docker-workshop.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "Devops -dacker two days workshop/WhatsApp Image 2026-10-09 at 9.19.39 AM (1).jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content"
+  },
+  "college-engagement.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "MOU KRISHNASWAMY ENGINEERING COLLEGE AND TECHNOLOGY- MOU/WhatsApp Image 2026-10-09 at 9.17.46 AM.jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content"
+  },
+  "project-review.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "project review and internship and certification/WhatsApp Image 2026-10-09 at 9.22.23 AM.jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content"
+  },
+  "summer-internship.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "summer internship 2026/WhatsApp Image 2026-10-09 at 9.44.55 AM (3).jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content"
+  },
+  "classroom.webp": {
+    "source": "user-uploaded masterdata.zip",
+    "archive_path": "summer internship 2026/WhatsApp Image 2026-10-09 at 9.44.50 AM.jpeg",
+    "treatment": "EXIF orientation, bounded resize, WebP encoding; no generated content"
+  }
+}
