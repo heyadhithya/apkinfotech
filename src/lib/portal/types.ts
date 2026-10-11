@@ -1,0 +1,14 @@
+export type Role = "student" | "staff";
+export type User = { id: string; name: string; email: string; role: Role };
+export type Profile = { userId: string; college: string; discipline: string; graduationYear: string; phone: string; bio: string; portfolioUrl: string };
+export type Internship = { id: string; title: string; description: string; location: string; mode: string; duration: string; deadline: string; status: "draft" | "published" | "closed"; isDemo: boolean };
+export type Application = { id: string; userId: string; internshipId: string; motivation: string; status: "submitted" | "reviewing" | "accepted" | "rejected" | "withdrawn"; createdAt: string; updatedAt: string; studentName?: string; studentEmail?: string; studentProfile?: Profile };
+export type Course = { id: string; title: string; description: string; status: "draft" | "published"; isDemo: boolean };
+export type Module = { id: string; courseId: string; title: string; position: number };
+export type Lesson = { id: string; moduleId: string; title: string; content: string; position: number; assignment: string };
+export type Enrollment = { userId: string; courseId: string; createdAt: string };
+export type Completion = { userId: string; lessonId: string; completedAt: string };
+export type Submission = { id: string; userId: string; lessonId: string; content: string; feedback: string; status: "submitted" | "reviewed"; updatedAt: string; studentName?: string };
+export type PortalSnapshot = { user: User; profile: Profile; internships: Internship[]; applications: Application[]; courses: Course[]; modules: Module[]; lessons: Lesson[]; enrollments: Enrollment[]; completions: Completion[]; submissions: Submission[] };
+export type PortalAction = "profile.save" | "application.submit" | "application.withdraw" | "enrollment.create" | "lesson.complete" | "submission.save" | "internship.save" | "application.review" | "course.save" | "module.save" | "lesson.save" | "submission.review";
+export type PortalPayload = Record<string, unknown>;

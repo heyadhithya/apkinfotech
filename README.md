@@ -1,9 +1,14 @@
 # APK Infotech
 
+The implemented site now includes a local full-stack student internship and learning
+portal at `/portal`. See [portal setup, features and production blockers](docs/portal/README.md)
+and [build progress](BUILD_PROGRESS.md). Node 24 and a persistent SQLite file are required.
+
+
 Website project for a freelance client: a course-focused landing page with
 placement support and job readiness content. Product scope is recorded in
-[PRODUCT.md](PRODUCT.md). A minimal Next.js App Router starter is included;
-the client website will be developed in Codex Cloud.
+[PRODUCT.md](PRODUCT.md). The public training website is implemented in Next.js App Router.
+Earlier starter setup notes below are retained for environment context.
 
 The repository is prepared for Codex Cloud with **Impeccable**, **Superpowers**,
 **Ponytail full**, **Matt Pocock skills including Grill Me**, and **RTK**.

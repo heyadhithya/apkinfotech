@@ -11,6 +11,7 @@ const links = [
   { title: "Activities", href: "/#activities" },
   { title: "About", href: "/#about" },
   { title: "Contact", href: "/#contact" },
+  { title: "Student portal", href: "/portal" },
 ];
 const subscribeHash = (listener: () => void) => {
   window.addEventListener("hashchange", listener);
@@ -101,6 +102,7 @@ export default function Navigation() {
           {links.map((link) => {
             const current =
               (link.title === "Courses" && pathname.startsWith("/courses/")) ||
+              (link.href === "/portal" && pathname.startsWith("/portal")) ||
               (pathname === "/" &&
                 (link.href === "/"
                   ? !hash || hash === "#main"
@@ -116,6 +118,7 @@ export default function Navigation() {
                   setOpen(false);
                   if (
                     pathname === "/" &&
+                    (link.href === "/" || link.href.startsWith("/#")) &&
                     !event.metaKey &&
                     !event.ctrlKey &&
                     !event.shiftKey &&

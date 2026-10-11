@@ -1,0 +1,50 @@
+.staff-panel { min-width: 0; color: #081d37; }
+.staff-tabs { margin-bottom: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+.staff-tabs button { min-height: 44px; padding: 10px 16px; border: 1px solid #bac7d8; background: white; color: #173f75; font: inherit; cursor: pointer; }
+.staff-tabs button[aria-pressed="true"] { background: #081d37; color: white; border-color: #081d37; }
+.staff-heading { display: flex; justify-content: space-between; align-items: start; gap: 20px; margin-bottom: 20px; }
+.staff-heading h2, .staff-heading h3 { margin: 0; }
+.staff-heading p { margin: 8px 0 0; }
+.staff-workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.staff-list { display: grid; gap: 0; }
+.staff-row { padding: 22px 0; border-bottom: 1px solid #dce1e5; overflow-wrap: anywhere; }
+.staff-row:first-child { padding-top: 0; }
+.staff-row h3, .staff-row h4 { margin: 0 0 8px; }
+.staff-row p { margin: 8px 0; }
+.staff-row .portal-badge + .portal-badge { margin-left: 8px; }
+.staff-form { padding: 24px; background: #f3f5f8; border: 1px solid #dce1e5; }
+.staff-form h3 { margin: 0 0 20px; font-size: 20px; }
+.staff-form fieldset, .staff-feedback fieldset { border: 0; padding: 0; margin: 0; min-width: 0; display: grid; gap: 16px; }
+.staff-form .portal-field, .staff-feedback .portal-field, .staff-inline-form .portal-field { display: grid; gap: 8px; }
+.staff-panel textarea { resize: vertical; min-height: 120px; }
+.staff-panel .portal-input { width: 100%; min-width: 0; box-sizing: border-box; caret-color: #956811; }
+.staff-check { display: flex; gap: 10px; align-items: center; min-height: 44px; }
+.staff-check input { width: 18px; height: 18px; accent-color: #173f75; }
+.staff-edit { min-height: 44px; padding: 8px 12px; background: transparent; color: #173f75; border: 1px solid #bac7d8; font: inherit; font-size: 14px; cursor: pointer; text-align: left; }
+.staff-edit:hover, .staff-tabs button:hover { background: #edf1f5; color: #081d37; }
+.staff-edit[aria-pressed="true"] { background: #e8d6aa; border-color: #956811; }
+.staff-panel button:focus-visible, .staff-panel input:focus-visible, .staff-panel textarea:focus-visible, .staff-panel select:focus-visible { outline: 2px solid #956811; outline-offset: 3px; }
+.staff-panel button:disabled { opacity: .65; cursor: wait; }
+.staff-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.staff-inline-form { display: flex; gap: 16px; align-items: end; margin-top: 20px; }
+.staff-inline-form .portal-field { min-width: 180px; }
+.staff-text { white-space: pre-wrap; max-width: 75ch; overflow-wrap: anywhere; }
+.staff-feedback { max-width: 760px; margin-top: 20px; }
+.staff-divider { height: 1px; background: #dce1e5; margin: 36px 0 28px; }
+.staff-error { background: #fff5f5; color: #a22424; border: 1px solid #dbadad; }
+.staff-panel ::selection { background: #e8d6aa; color: #081d37; }
+@media (max-width: 760px) {
+ .staff-workspace { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+ .staff-heading { flex-direction: column; gap: 12px; }
+ .staff-form { padding: 18px; }
+ .staff-inline-form { flex-direction: column; align-items: stretch; }
+ .staff-tabs { gap: 6px; }
+ .staff-tabs button { flex: 1 1 140px; }
+}
+.staff-profile { margin: 16px 0; }
+.staff-profile summary { min-height: 44px; padding: 10px 0; color: #173f75; cursor: pointer; }
+.staff-profile summary:focus-visible { outline: 2px solid #956811; outline-offset: 3px; }
+.staff-profile dl { margin: 8px 0 20px; display: grid; gap: 14px; }
+.staff-profile dt { font-weight: 600; font-size: 14px; }
+.staff-profile dd { margin: 4px 0 0; overflow-wrap: anywhere; }
+.staff-profile a { color: #173f75; text-underline-offset: 3px; }
