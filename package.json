@@ -16,7 +16,8 @@
     "test": "node --test tests/*.test.mjs",
     "portal:seed": "node scripts/portal-seed.mjs",
     "portal:staff": "node scripts/portal-staff.mjs",
-    "test:integration": "node scripts/portal-integration.mjs"
+    "test:integration": "node scripts/portal-integration.mjs",
+    "demo": "PORTAL_DEMO_MODE=true next dev"
   },
   "dependencies": {
     "next": "16.4.0",

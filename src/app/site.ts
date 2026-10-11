@@ -5,6 +5,7 @@ export const siteUrl = (
 ).replace(/\/$/, "");
 export const indexingEnabled =
   process.env.NODE_ENV === "production" &&
+  process.env.PORTAL_DEMO_MODE !== "true" &&
   process.env.VERCEL_ENV !== "preview" &&
   process.env.SEARCH_INDEXING !== "off";
 export const business = {

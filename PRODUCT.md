@@ -135,3 +135,7 @@ Portal setup, permissions, domain rules and production blockers are documented i
 service: Vercel ephemeral storage is refused; production needs durable hosting,
 verified origin, account recovery/verification, staff MFA and privacy decisions.
 No payments, external employers, uploads or email delivery were added.
+
+## Seven-role pre-production evaluation
+
+User approved a redesigned APK monogram and seven-role synthetic demo: student, academics, HR, CTO, administrator, finance and business/CRM. PORTAL_DEMO_MODE=true serves this demo at / and /demo. Records remain in sessionStorage in the current browser tab; role selection creates no authenticated server session. Company identity and archive photographs describe the real company; operational records are synthetic. CIN remains unverified and is not published. The original SQLite portal remains separate and disabled on Vercel.

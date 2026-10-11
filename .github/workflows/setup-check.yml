@@ -25,3 +25,11 @@ jobs:
           app_pid=$!
           trap 'kill "$app_pid"' EXIT
           npm run smoke
+      - name: Build isolated pre-production demo
+        run: PORTAL_DEMO_MODE=true npm run build
+      - name: Smoke test demo and real-auth isolation
+        run: |
+          PORTAL_DEMO_MODE=true VERCEL=1 npm run start -- --port 3001 > "$RUNNER_TEMP/demo.log" 2>&1 &
+          app_pid=$!
+          trap 'kill "$app_pid"' EXIT
+          node scripts/demo-smoke.mjs http://localhost:3001

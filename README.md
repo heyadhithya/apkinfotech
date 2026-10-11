@@ -1,3 +1,5 @@
+Seven-role pre-production demo: see [demo operation and release notes](docs/demo/README.md).
+
 # APK Infotech
 
 The implemented site now includes a local full-stack student internship and learning
