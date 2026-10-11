@@ -13,3 +13,9 @@ dist/
 coverage/
 __pycache__/
 .DS_Store
+
+# Local portal database (contains personal data)
+.data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm

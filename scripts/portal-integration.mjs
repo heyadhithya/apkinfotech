@@ -1,0 +1,91 @@
+// Real production-server integration against an isolated, disposable local database.
+import assert from 'node:assert/strict';
+import {spawn} from 'node:child_process';
+import {mkdtempSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {randomBytes,randomUUID} from 'node:crypto';
+import {setTimeout as delay} from 'node:timers/promises';
+const dir=mkdtempSync(join(tmpdir(),'apk-http-'));
+const port=process.env.PORTAL_TEST_PORT || '3191',base=`http://localhost:${port}`;
+process.env.PORTAL_DB_PATH=join(dir,'portal.sqlite');process.env.PORTAL_ORIGIN=base;
+const {createUser,getDb}=await import('../src/lib/portal/store.ts');
+const {hashPassword}=await import('../src/lib/portal/auth.ts');
+const password=randomBytes(24).toString('hex');
+createUser({id:randomUUID(),name:'Synthetic staff',email:'staff@example.test',role:'staff',passwordHash:await hashPassword(password)});
+const server=spawn(process.execPath,['node_modules/next/dist/bin/next','start','-p',port],{env:{...process.env,NODE_ENV:'production'},stdio:['ignore','pipe','pipe']});
+let output='';server.stdout.on('data',b=>output+=b);server.stderr.on('data',b=>output+=b);
+async function call(path,{body,cookie='',origin=base,method=body===undefined?'GET':'POST'}={}) {
+ const response=await fetch(base+path,{method,headers:{...(body===undefined?{}:{'Content-Type':'application/json'}),...(origin?{Origin:origin}:{}),...(cookie?{Cookie:cookie}:{})},...(body===undefined?{}:{body:JSON.stringify(body)})});
+ return {status:response.status,data:await response.json(),cookie:response.headers.get('set-cookie')?.split(';')[0],headers:response.headers};
+}
+const mutation=(cookie,action,payload)=>call('/api/portal',{cookie,body:{action,payload}});
+try {
+ let ready=false;for(let i=0;i<50;i++){try{if((await fetch(base+'/portal')).ok){ready=true;break;}}catch{}await delay(200);}
+ assert.ok(ready,output);
+ assert.equal((await call('/api/portal')).status,401);
+ assert.equal((await call('/api/portal/auth/register',{origin:'https://foreign.test',body:{}})).status,403);
+ assert.equal((await call('/api/portal/auth/register',{origin:null,body:{}})).status,403);
+ assert.equal((await call('/api/portal/auth/register',{body:{name:'Attacker',email:'attacker@example.test',password,role:'staff',consent:true}})).status,400);
+ const a=await call('/api/portal/auth/register',{body:{name:'Student A',email:'a@example.test',password,consent:true}});
+ const b=await call('/api/portal/auth/register',{body:{name:'Student B',email:'b@example.test',password,consent:true}});
+ const staff=await call('/api/portal/auth/login',{body:{email:'staff@example.test',password}});
+ for(const result of [a,b,staff])assert.equal(result.status,200,JSON.stringify(result.data));
+ assert.match(a.headers.get('set-cookie'),/HttpOnly/);assert.match(a.headers.get('set-cookie'),/SameSite=Lax/);assert.match(a.headers.get('set-cookie'),/Secure/);
+ assert.match((await call('/api/portal',{cookie:a.cookie})).headers.get('cache-control'),/no-store/);
+ assert.equal((await mutation(a.cookie,'course.save',{title:'Forbidden',description:'No',status:'published'})).status,403);
+ assert.equal((await mutation(a.cookie,'profile.save',{userId:b.data.user.id})).status,400);
+ assert.equal((await mutation(a.cookie,'toString',{})).status,400);
+ assert.equal((await mutation(a.cookie,'profile.save',{college:'Saved college',bio:'Private A profile'})).status,200);
+ assert.equal((await call('/api/portal',{cookie:b.cookie})).data.profile.bio,'');
+ const opportunity={title:'Synthetic test internship',description:'Test only, no real vacancy',location:'Example location',mode:'Remote',duration:'Test duration',deadline:'2099-12-31',status:'published',isDemo:true};
+ assert.equal((await mutation(staff.cookie,'internship.save',opportunity)).status,200);
+ let snapshot=(await call('/api/portal',{cookie:staff.cookie})).data;
+ const internshipId=snapshot.internships[0].id;
+ const applications=await Promise.all([mutation(a.cookie,'application.submit',{internshipId,motivation:'A private application'}),mutation(a.cookie,'application.submit',{internshipId,motivation:'Duplicate'})]);
+ assert.deepEqual(applications.map(r=>r.status).sort(),[200,409]);
+ const application=(await call('/api/portal',{cookie:a.cookie})).data.applications[0];
+ assert.equal((await mutation(b.cookie,'application.withdraw',{id:application.id})).status,404);
+ assert.equal((await call('/api/portal',{cookie:b.cookie})).data.applications.length,0);
+ assert.equal((await mutation(staff.cookie,'application.review',{id:application.id,status:'accepted'})).status,200);
+ assert.equal((await call('/api/portal',{cookie:a.cookie})).data.applications[0].status,'accepted');
+ assert.equal((await mutation(staff.cookie,'internship.save',{...opportunity,id:internshipId,status:'closed'})).status,200);
+ assert.equal((await mutation(b.cookie,'application.submit',{internshipId,motivation:'Stale form'})).status,409);
+ assert.equal((await mutation(staff.cookie,'course.save',{title:'Synthetic course',description:'Test only',status:'published',isDemo:true})).status,200);
+ snapshot=(await call('/api/portal',{cookie:staff.cookie})).data;const courseId=snapshot.courses[0].id;
+ for(const [title,position] of [['First module',1],['Second module',2]])assert.equal((await mutation(staff.cookie,'module.save',{courseId,title,position})).status,200);
+ snapshot=(await call('/api/portal',{cookie:staff.cookie})).data;const modules=snapshot.modules;
+ for(const [moduleId,title,position] of [[modules[0].id,'First lesson',1],[modules[0].id,'Second lesson',2],[modules[1].id,'Third lesson',1]])assert.equal((await mutation(staff.cookie,'lesson.save',{moduleId,title,position,content:'Private learning content',assignment:'Submit a short response'})).status,200);
+ snapshot=(await call('/api/portal',{cookie:staff.cookie})).data;const lessons=snapshot.lessons;
+ assert.equal((await call('/api/portal',{cookie:a.cookie})).data.lessons.length,0);
+ assert.equal((await mutation(a.cookie,'lesson.complete',{lessonId:lessons[0].id})).status,404);
+ const enrollments=await Promise.all([mutation(a.cookie,'enrollment.create',{courseId}),mutation(a.cookie,'enrollment.create',{courseId})]);assert.ok(enrollments.every(r=>r.status===200));
+ assert.equal((await call('/api/portal',{cookie:a.cookie})).data.enrollments.length,1);
+ assert.equal((await mutation(a.cookie,'lesson.complete',{lessonId:lessons[2].id})).status,409);
+ assert.equal((await mutation(b.cookie,'submission.save',{lessonId:lessons[0].id,content:'Forged'})).status,404);
+ assert.equal((await mutation(a.cookie,'lesson.complete',{lessonId:lessons[0].id})).status,200);
+ assert.equal((await mutation(a.cookie,'lesson.complete',{lessonId:lessons[0].id})).status,200);
+ assert.equal((await mutation(a.cookie,'submission.save',{lessonId:lessons[0].id,content:'Private assignment A'})).status,200);
+ snapshot=(await call('/api/portal',{cookie:staff.cookie})).data;const submission=snapshot.submissions[0];
+ assert.equal((await mutation(staff.cookie,'submission.review',{id:submission.id,feedback:'Useful response.'})).status,200);
+ assert.equal((await call('/api/portal',{cookie:a.cookie})).data.submissions[0].feedback,'Useful response.');
+ assert.equal((await call('/api/portal',{cookie:b.cookie})).data.submissions.length,0);
+ assert.equal((await mutation(staff.cookie,'course.save',{id:courseId,title:'Synthetic course',description:'Test only',status:'draft'})).status,200);
+ assert.equal((await call('/api/portal',{cookie:a.cookie})).data.lessons.length,0);
+ assert.equal((await mutation(a.cookie,'lesson.complete',{lessonId:lessons[1].id})).status,404);
+ assert.equal((await mutation(b.cookie,'enrollment.create',{courseId})).status,409);
+ assert.equal((await mutation(staff.cookie,'course.save',{id:courseId,title:'Synthetic course',description:'Test only',status:'published'})).status,200);
+ assert.equal((await call('/api/portal',{cookie:a.cookie})).data.completions.length,1);
+ // Concurrent sequential completions may need retry; a failed prerequisite must never be counted.
+ const concurrent=await Promise.all(lessons.slice(1).map(lesson=>mutation(a.cookie,'lesson.complete',{lessonId:lesson.id})));
+ for(let i=0;i<concurrent.length;i++){assert.ok([200,409].includes(concurrent[i].status));if(concurrent[i].status===409)assert.equal((await mutation(a.cookie,'lesson.complete',{lessonId:lessons[i+1].id})).status,200);}
+ assert.equal((await call('/api/portal',{cookie:a.cookie})).data.completions.length,3);
+ assert.equal((await call('/api/portal/auth/logout',{cookie:a.cookie,body:{}})).status,200);
+ assert.equal((await call('/api/portal',{cookie:a.cookie})).status,401);
+ assert.equal((await call('/api/portal',{cookie:'apk_portal_session=forged'})).status,401);
+ const relogin=await call('/api/portal/auth/login',{body:{email:'a@example.test',password}});
+ assert.equal((await call('/api/portal',{cookie:relogin.cookie})).data.profile.college,'Saved college');
+ getDb().prepare('UPDATE sessions SET expires_at=0').run();
+ assert.equal((await call('/api/portal',{cookie:relogin.cookie})).status,401);
+ console.log('PASS HTTP integration: production auth/cookies/CSRF, student A/B isolation, staff CRUD, duplicate requests, application review, ordered learning, assignment feedback, unpublish gates, persistence, logout and expiry.');
+} finally {server.kill('SIGTERM');await new Promise(resolve=>server.once('exit',resolve));rmSync(dir,{recursive:true,force:true});}

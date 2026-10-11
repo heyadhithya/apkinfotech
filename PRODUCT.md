@@ -26,7 +26,7 @@ detail pages, factual about content, past activities with photo viewing,
 internship enquiries, FAQ, official contacts, and privacy/website terms pages.
 The approved direction takes corporate cues from AWS Training and IBM while
 preserving the official APK navy-and-gold identity. Live reference fidelity is
-unverified; reference requests were blocked. A full LMS is outside scope.
+unverified; reference requests were blocked. The authorized local student internship and learning portal extends this scope; see the portal section below.
 
 ## Positioning
 
@@ -70,11 +70,11 @@ optional token authentication is supported. No live lead-service credentials wer
 supplied, and receipt/storage by a real company service has not been verified.
 The application has no local enquiry database or PII logging. Rate limiting uses
 a temporary hashed network identifier; conversion events stay in the browser.
-No external analytics, advertising trackers, or application cookies are installed.
+No external analytics or advertising trackers are installed. The portal uses an essential session cookie.
 External service privacy/retention must be confirmed with the company.
 
-The site does not process course payments, enrol users, host lessons, provide
-accounts, assessments, or learner dashboards. Registration of interest does not
+The marketing enquiry flow does not process payments or enroll users. The separate
+portal provides accounts, learning enrollment, lessons and dashboards. Registration of interest does not
 reserve a seat, confirm a batch, or guarantee employment.
 
 Implemented canonical programme paths:
@@ -121,3 +121,21 @@ unconfirmed. Obtain client-approved evidence before publishing those claims.
 - Distinguish a draft, server acceptance, registration of interest, and enrolment.
 - Preserve accessible keyboard, mobile, error, retry, and reduced-motion flows.
 - Do not expand a visual reference into unapproved LMS or business capabilities.
+
+## Student internship and learning portal — authorized 2026-10-11
+
+`/portal` extends the existing brand with an Operate-mode student/staff workspace.
+It uses a local persistent SQLite backend, secure student signup/session handling,
+profiles, internship applications/statuses, staff management, course enrollment,
+ordered modules/lessons, progress and text assignments/feedback. Demo records are
+opt-in and labelled; no real opportunities or accredited outcomes are invented.
+
+Portal setup, permissions, domain rules and production blockers are documented in
+`docs/portal/README.md`. This release is a local evaluation build, not a deployed
+service: Vercel ephemeral storage is refused; production needs durable hosting,
+verified origin, account recovery/verification, staff MFA and privacy decisions.
+No payments, external employers, uploads or email delivery were added.
+
+## Seven-role pre-production evaluation
+
+User approved a redesigned APK monogram and seven-role synthetic demo: student, academics, HR, CTO, administrator, finance and business/CRM. PORTAL_DEMO_MODE=true serves this demo at / and /demo. Records remain in sessionStorage in the current browser tab; role selection creates no authenticated server session. Company identity and archive photographs describe the real company; operational records are synthetic. CIN remains unverified and is not published. The original SQLite portal remains separate and disabled on Vercel.

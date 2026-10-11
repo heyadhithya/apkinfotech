@@ -1,0 +1,61 @@
+import { createRequire } from 'node:module';
+import { randomBytes,randomUUID } from 'node:crypto';
+import assert from 'node:assert/strict';
+import {mkdtempSync,mkdirSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join,resolve} from 'node:path';
+import {spawn} from 'node:child_process';
+import {setTimeout as delay} from 'node:timers/promises';
+const require=createRequire(import.meta.url);
+const dir=mkdtempSync(join(tmpdir(),'apk-browser-'));
+process.env.PORTAL_DB_PATH=join(dir,'test.sqlite');
+const base='http://localhost:3192';process.env.PORTAL_ORIGIN=base;
+const screenshots=resolve(process.env.PORTAL_SCREENSHOTS || '.data/browser-evidence');mkdirSync(screenshots,{recursive:true});
+const {chromium}=require('playwright');
+const {createUser}=await import('../src/lib/portal/store.ts');
+const {hashPassword}=await import('../src/lib/portal/auth.ts');
+const suffix=Date.now(),password=randomBytes(24).toString('hex');
+const staffEmail=`staff-${suffix}@example.test`,email=`student-${suffix}@example.test`;
+createUser({id:randomUUID(),name:'Demo reviewer',email:staffEmail,role:'staff',passwordHash:await hashPassword(password)});
+await import('./portal-seed.mjs');
+const server=spawn(process.execPath,['node_modules/next/dist/bin/next','start','-p','3192'],{env:{...process.env,NODE_ENV:'production'},stdio:'ignore'});
+let browser;
+try {
+let ready=false;for(let i=0;i<50;i++){try{if((await fetch(base+'/portal')).ok){ready=true;break;}}catch{}await delay(200);}assert.ok(ready,'test server startup');
+browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH || '/usr/bin/chromium',headless:true,args:['--no-sandbox']});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});
+async function capture(name){await page.evaluate(()=>{document.activeElement?.blur();window.scrollTo(0,0);});await page.waitForTimeout(200);await page.screenshot({path:join(screenshots,name),fullPage:true});}
+async function accessibility(){await page.addScriptTag({path:require.resolve('axe-core')});const results=await page.evaluate(()=>window.axe.run(document.querySelector('main'),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}}));assert.deepEqual(results.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)})),[]);}
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto(base);await page.getByRole('link',{name:'Student portal',exact:true}).click();await page.waitForURL('**/portal');await page.getByRole('heading',{name:'Welcome back'}).waitFor();
+await accessibility();await capture('login-desktop.png');
+await page.getByRole('button',{name:'Create account',exact:true}).click();
+await page.getByLabel('Full name').fill('Demo learner');await page.getByLabel('Email address').fill(email);await page.getByLabel('Password',{exact:false}).fill(password);await page.getByRole('checkbox').check();await page.getByRole('button',{name:'Create student account'}).click();
+await page.getByRole('heading',{name:'Your next step'}).waitFor();
+await page.getByRole('button',{name:'Profile',exact:true}).click();await page.getByLabel('College',{exact:true}).fill('Example College');await page.getByRole('button',{name:'Save profile',exact:true}).click();await page.getByText('Profile saved.',{exact:true}).waitFor();
+await page.getByRole('button',{name:'Internships',exact:true}).click();await page.locator('summary').filter({hasText:'Apply for this internship'}).first().click();await page.getByLabel('Why would you like to join?').first().fill('I would like to practice building accessible web applications.');await page.getByRole('button',{name:'Submit application',exact:true}).first().click();await page.getByText('Application submitted. You can track its status here.').waitFor();
+await capture('student-internships.png');
+await page.getByRole('button',{name:'My learning',exact:true}).click();await page.getByRole('button',{name:'Enroll in course',exact:true}).first().click();await page.getByText('Enrollment saved. Open the course to begin.').waitFor();await page.getByRole('button',{name:'Open course',exact:true}).first().click();
+await page.getByRole('button',{name:'Mark lesson complete',exact:true}).click();await page.getByText('Lesson completed. Your progress is saved.').waitFor();
+await accessibility();await capture('student-learning.png');
+const assignment=page.getByLabel('Your response');
+if(await assignment.count()){await assignment.fill('My assignment response describes a student learning workflow and its next action.');await page.getByRole('button',{name:'Submit response',exact:true}).click();await page.getByText('Assignment submitted for staff review.').waitFor();}
+await page.reload();await page.getByRole('heading',{name:'Your next step'}).waitFor();await page.getByRole('button',{name:'Profile',exact:true}).click();assert.equal(await page.getByLabel('College',{exact:true}).inputValue(),'Example College');
+await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'My learning',exact:true}).click();await page.getByRole('button',{name:'Open course',exact:true}).first().click();await accessibility();await capture('student-mobile.png');
+assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),true,'mobile horizontal overflow');
+await page.getByRole('button',{name:'Sign out',exact:true}).click();await page.getByRole('heading',{name:'Welcome back'}).waitFor();
+await page.setViewportSize({width:1440,height:1000});await page.getByLabel('Email address').fill(staffEmail);await page.getByLabel('Password',{exact:false}).fill(password);await page.getByRole('button',{name:'Sign in',exact:true}).last().click();
+await page.getByRole('button',{name:'Applicants',exact:true}).waitFor();await page.getByRole('button',{name:'Applicants',exact:true}).click();const applicant=page.locator('article').filter({hasText:email});await applicant.getByLabel('Review decision').selectOption('accepted');await applicant.getByRole('button',{name:'Save decision'}).click();await page.getByText('Application review saved.',{exact:true}).waitFor();await capture('staff-applicants.png');
+await page.getByRole('button',{name:'Curriculum',exact:true}).click();await accessibility();await capture('staff-curriculum.png');
+const formFor=(title)=>page.locator('form').filter({has:page.getByRole('heading',{name:title,exact:true})});
+const courseForm=formFor('Create course');await courseForm.getByLabel('Course title',{exact:true}).fill('Browser practice course');await courseForm.getByLabel('Description',{exact:true}).fill('Synthetic course created through the staff browser form.');await courseForm.locator('select[name="status"]').selectOption('published');await courseForm.getByRole('button',{name:'Save changes'}).click();await page.getByText('Course saved.',{exact:true}).waitFor();
+await page.locator('article').filter({has:page.getByRole('heading',{name:'Browser practice course',exact:true})}).getByRole('button',{name:'View modules'}).click();
+const moduleForm=formFor('Create module');await moduleForm.getByLabel('Module title',{exact:true}).fill('Browser module');await moduleForm.getByLabel('Order position',{exact:true}).fill('1');await moduleForm.getByRole('button',{name:'Save changes'}).click();await page.getByText('Module saved.',{exact:true}).waitFor();
+await page.locator('article').filter({hasText:'Browser module'}).getByRole('button',{name:'View lessons'}).click();
+const lessonForm=formFor('Create lesson');await lessonForm.getByLabel('Lesson title',{exact:true}).fill('Browser lesson');await lessonForm.getByLabel('Order position',{exact:true}).fill('1');await lessonForm.getByLabel('Lesson content (plain text)',{exact:true}).fill('A synthetic practice lesson written through the editor.');await lessonForm.getByRole('button',{name:'Save changes'}).click();await page.getByText('Lesson saved.',{exact:true}).waitFor();
+await page.getByRole('button',{name:'Assignments',exact:true}).click();const review=page.locator('article').filter({hasText:'My assignment response describes'});await review.getByLabel('Feedback to student',{exact:true}).fill('Your response gives a clear starting point.');await review.getByRole('button',{name:'Save feedback',exact:true}).click();await page.getByText('Assignment feedback saved.',{exact:true}).waitFor();
+await page.setViewportSize({width:390,height:844});await accessibility();await capture('staff-mobile.png');assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),true);
+await page.setViewportSize({width:1440,height:1000});
+await page.getByRole('button',{name:'Sign out',exact:true}).click();await page.getByRole('heading',{name:'Welcome back'}).waitFor();await page.getByLabel('Email address').fill(email);await page.getByLabel('Password',{exact:false}).fill(password);await page.getByRole('button',{name:'Sign in',exact:true}).last().click();await page.getByRole('heading',{name:'Your next step'}).waitFor();await page.getByRole('button',{name:'Internships',exact:true}).click();await page.getByText('accepted',{exact:true}).waitFor();
+assert.deepEqual(errors,[]);console.log('PASS browser + axe: student registration/profile/application/enrollment/completion/reload/mobile; staff login/review; student sees accepted; no browser errors.');await browser.close();browser=null;
+} finally {await browser?.close();server.kill('SIGTERM');await new Promise(resolve=>server.once('exit',resolve));rmSync(dir,{recursive:true,force:true});}

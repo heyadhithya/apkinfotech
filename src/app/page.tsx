@@ -1,3 +1,4 @@
+import DemoApp from "./demo/demo-app";
 import Image from "next/image";
 import Arrow from "./arrow";
 import Link from "next/link";
@@ -7,11 +8,12 @@ import { registrationUrl } from "./course-data";
 import ProgrammeEnquiry from "./programme-enquiry";
 import { business, createPageMetadata, serializeJsonLd, siteUrl } from "./site";
 export const metadata = createPageMetadata(
-  "Technical courses & career preparation in Chennai | APK Infotech",
+  process.env.PORTAL_DEMO_MODE === "true" ? "Careers & learning platform | APK Infotech" : "Technical courses & career preparation in Chennai | APK Infotech",
   "Explore APK Infotech’s seven programmes in software, AI, VLSI, cyber security, robotics, and career preparation. View real activities and enquire with the Chennai team.",
   "/",
 );
 export default function Home() {
+  if (process.env.PORTAL_DEMO_MODE === "true") return <DemoApp />;
   return (
     <main id="main">
       <script

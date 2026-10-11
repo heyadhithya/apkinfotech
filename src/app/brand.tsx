@@ -4,7 +4,7 @@ export default function Brand() {
   return (
     <Link className="brand official-brand" href="/#main">
       <Image
-        src="/images/apk-official-logo.webp"
+        src="/images/apk-platform-mark.svg"
         alt=""
         width={75}
         height={60}

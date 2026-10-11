@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import Navigation from "./navigation";
-import Footer from "./footer";
+import { SiteHeader, SiteFooter } from "./site-chrome";
 import { siteUrl, indexingEnabled } from "./site";
 import "./globals.css";
 export const metadata: Metadata = {
@@ -42,9 +41,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <a className="skip-link" href="#main">
           Skip to content
         </a>
-        <Navigation />
+        <SiteHeader demoEnabled={process.env.PORTAL_DEMO_MODE === "true"} />
         {children}
-        <Footer />
+        <SiteFooter demoEnabled={process.env.PORTAL_DEMO_MODE === "true"} />
       </body>
     </html>
   );
